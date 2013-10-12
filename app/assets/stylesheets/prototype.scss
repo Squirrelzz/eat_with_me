@@ -1,0 +1,33 @@
+div[class*='character'] {
+	background: green;
+	min-height: 5em;
+	border: .5em solid black;
+	img {
+		border-radius: 40px;
+	}
+	p {
+		text-align: center;
+	}
+}
+section[class*='screen'] {
+	height: 450px;
+	background: red;
+	margin-bottom: 100px;
+}
+
+.screen--main {
+	
+	
+}
+.screen--character {
+	
+	
+}
+
+.screen--feed {
+	.header {
+		background: black;
+		padding: 1em;
+	}
+	
+}
