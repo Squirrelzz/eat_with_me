@@ -1,7 +1,7 @@
 <section class="screen--character">
   <p>Welcome, <%= @person.name %>!</p>
 
-  <h2>Choose Character</h2>
+  <h2>Choose a Friend!</h2>
 
   <div class="row">
     <% Character.all.each do |character| %>
@@ -13,7 +13,7 @@
         <div class="information">
           <%= semantic_form_for Pet.new do |f| %>
             <%= f.input :name %>
-            <%= f.input :sex, as: :radio, collection: %w[Male Female] %>
+            <%= f.input :sex, as: :radio, collection: %w[Boy Girl] %>
             <%= f.input :character_id, value: character.id, as: :hidden %>
             <%= f.input :person_id, value: @person.id, as: :hidden %>
             <%= f.actions do %>

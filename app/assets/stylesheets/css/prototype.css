@@ -12,25 +12,29 @@ section[class*='screen'] {
   min-height: 5em;
   background: #43b7e9;
   border-radius: 2em;
-  border: 0.5em double #361984;
+  border: 0.5em double #7a59ef;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding-box;
   background-clip: padding-box; }
   .screen--character .character p {
     text-align: center; }
   .screen--character .character.selected {
-    background: #9acd6c; }
+    background: #9acd6c;
+    border: 0.5em double #361984;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box; }
   .screen--character .character .information {
     display: none;
     background: rgba(247, 245, 235, 0.75);
     padding: 1em;
     position: absolute;
     min-height: 5em;
-    margin-top: -11em;
+    margin-top: -20em;
     z-index: 10; }
     .screen--character .character .information li {
       list-style-type: none; }
-    .screen--character .character .information label {
+    .screen--character .character .information .label, .screen--character .character .information .label label {
       display: none; }
 
 .screen--feed .header {

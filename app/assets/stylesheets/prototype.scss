@@ -3,6 +3,7 @@ $card: #43B7E9;
 $highlight: #9ACD6C;
 $infoCard: rgba(247,245,235,.75);
 $royal: #361984;
+$light: #7A59EF;
 
 @mixin background-clip($clip) {
   -webkit-background-clip: $clip;
@@ -30,7 +31,7 @@ section[class*='screen'] {
     min-height: 5em;
     background: $card;
     border-radius: 2em;
-  border: .5em double $royal;
+  border: .5em double $light;
   @include background-clip(padding-box);
 	
     p {
@@ -38,6 +39,8 @@ section[class*='screen'] {
     }
     &.selected {
       background: $highlight;
+	  border: .5em double $royal;
+	  @include background-clip(padding-box);
     }
 
     .information {
@@ -46,14 +49,14 @@ section[class*='screen'] {
 	  padding: 1em;
       position: absolute;
       min-height: 5em;
-      margin-top: -11em;
+      margin-top: -20em;
       z-index: 10;
 
 	  li {
 		  list-style-type: none;
 	  }
-	  label {
-		  display: none;
+	  .label, .label label {
+	  	  display: none;
 	  }
     }
   }
