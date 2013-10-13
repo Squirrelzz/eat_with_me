@@ -10,6 +10,7 @@ class FeedMe
   activate: (event, ui) =>
     $ele = $(event.target)
     $ele.attr('src', $ele.data("open"))
+
   deactivate: (event, ui) =>
     $ele = $(event.target)
     $ele.attr('src', $ele.data("closed"))
@@ -17,6 +18,9 @@ class FeedMe
   drop: (event, ui) =>
     @deactivate(event, ui)
     $(".tooltip").hide()
+	
+    Foundation.libs.reveal.settings.animation = "fade"
+	
     feed =
       feed:
         meal_id: ui.draggable.data("mealId")
@@ -33,13 +37,13 @@ class FeedMe
       success: (data) =>
         $("#health_icon").attr("src", data.health_icon)
         $("#coins").html(data.coins)
-        $("#justFed").foundation("reveal", "open")
         $("#food-name").html(data.meal_name)
         $("#food-healthy").html(data.how_healthy)
         $("#food-value").html(data.value)
         $("#feeling").html(data.feeling)
         $("#happiness").attr("src", data.happiness)
         positionTick(data.health_index)
+        $("#justFed").foundation("reveal", "open")
 
       error: (xhr, status, error) ->
 
