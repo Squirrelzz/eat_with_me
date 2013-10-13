@@ -1,8 +1,8 @@
-$background: url(/assets/geometry.png) #f2eedc;
-$card: url(/assets/knit2.png);
-$card2: url(/assets/knit3.png);
-$card3: url(/assets/knit4.png);
-$card4: url(/assets/knit5.png);
+$background: url(/assets/bg/geometry.png) #f2eedc;
+$card: url(/assets/bg/knit2.png);
+$card2: url(/assets/bg/knit3.png);
+$card3: url(/assets/bg/knit4.png);
+$card4: url(/assets/bg/knit5.png);
 $highlight: #9ACD6C;
 $transLight: rgba(247,245,235,.75);
 $royal: #361984;
@@ -113,6 +113,7 @@ section[class*='screen'] {
 		text-align: center;
 	}
 }
+
 .draggable {
 	cursor: move;
 }
