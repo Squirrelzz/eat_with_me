@@ -16,6 +16,8 @@ class FeedMe
     $ele.attr('src', $ele.data("closed"))
 
   drop: (event, ui) =>
+    Foundation.libs.reveal.settings.animation = 'fade'
+
     @deactivate(event, ui)
     $(".tooltip").hide()
     feed =
@@ -40,6 +42,7 @@ class FeedMe
         $("#food-healthy").html(data.how_healthy)
         $("#food-value").html(data.value)
         $("#feeling").html(data.feeling)
+        $("#happiness").attr('src', data.happiness)
         positionTick(data.health_index)
 
       error: (xhr, status, error) ->
