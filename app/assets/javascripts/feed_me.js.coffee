@@ -17,13 +17,10 @@ class FeedMe
 
   drop: (event, ui) =>
     @deactivate(event, ui)
-    
-	
-    Foundation.libs.reveal.settings.animation = "fade"
-	
+    $(".tooltip").hide()
     feed =
       feed:
-        meal_id: ui.draggable.data("mealId")
+        meals_person_id: ui.draggable.data("mealsPersonId")
         pet_id: ui.draggable.data("petId")
 
     ui.draggable.remove()
@@ -35,15 +32,14 @@ class FeedMe
       data: feed
 
       success: (data) =>
-        $(".tooltip").hide()
         $("#health_icon").attr("src", data.health_icon)
         $("#coins").html(data.coins)
+        $("#justFed").foundation("reveal", "open")
         $("#food-name").html(data.meal_name)
+        $("#food-name-1").html(data.meal_name)
         $("#food-healthy").html(data.how_healthy)
         $("#food-value").html(data.value)
         $("#feeling").html(data.feeling)
-        $("#happiness").attr("src", data.happiness)
-        $("#justFed").foundation("reveal", "open")
         positionTick(data.health_index)
 
       error: (xhr, status, error) ->

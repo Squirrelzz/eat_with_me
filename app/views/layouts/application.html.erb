@@ -21,6 +21,7 @@
       <div class="large-12 columns">
         <div id="menu">
           <% if user_signed_in? %>
+            <%= link_to "Child's home", root_path %> |
             <%= link_to "Dashboard", user_path(current_user) %> |
             <%= link_to "Logout", destroy_user_session_path, method: :delete %>
           <% else %>

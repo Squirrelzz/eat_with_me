@@ -2,16 +2,18 @@ class Feed < ActiveRecord::Base
   belongs_to :meals_person
   belongs_to :pet
 
-  delegate :name, :qualification, to: :meal, prefix: true
+  delegate :meal, to: :meal_person, prefix: false
+  delegate :name, :qualification, to: :meal_person, prefix: true
+
   delegate \
     :health_index,
     :health_icon,
     :coins,
     to: :pet,
     prefix: true
-    
+
     def happiness
-      case meal_qualification
+      case meals_person.meal.qualification
       when "a-good"
         "/assets/health/happy.png"
       when "b-neutral"

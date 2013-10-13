@@ -3,21 +3,22 @@ class FeedsController < ApplicationController
   respond_to :html, :json
 
   def create
-    @feed = Feed.new(params.require(:feed).permit(:pet_id, :meal_id))
+    @feed = Feed.new(params.require(:feed).permit(:pet_id, :meals_person_id))
 
     if @feed.save
       respond_to do |format|
         format.html { @feed }
         format.json {
           render json: {
-            meal_id: @feed.meal_id,
+            meals_person_id: @feed.meals_person_id,
+            meal_id: @feed.meals_person.meal.id,
             pet_id: @feed.pet_id,
-            meal_name: @feed.meal_name.titleize,
+            meal_name: @feed.meals_person.meal.name.titleize,
             health_index: @feed.pet_health_index,
             health_icon: @feed.pet_health_icon,
             coins: @feed.pet_coins,
-            value: @feed.meal.points,
-            how_healthy: how_healthy(@feed.meal.qualification),
+            value: @feed.meals_person.meal.points,
+            how_healthy: how_healthy(@feed.meals_person.meal.qualification),
             feeling: @feed.pet.feeling,
             happiness: @feed.happiness
           }.to_json

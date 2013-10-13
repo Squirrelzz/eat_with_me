@@ -7,7 +7,7 @@ class Pet < ActiveRecord::Base
   delegate :image_url, to: :character
 
   def coins
-    feeds.map(&:meal).map(&:points).inject(:+)
+    feeds.map(&:meals_person).map(&:meal).map(&:points).inject(:+)
   end
 
   def health_index
@@ -17,7 +17,7 @@ class Pet < ActiveRecord::Base
       "c-bad"     => -1
     }
 
-    feeds.map(&:meal).map(&:qualification).map{|q| values[q] }.inject(:+).to_f / feeds.count
+    feeds.map(&:meals_person).map(&:meal).map(&:qualification).map{|q| values[q] }.inject(:+).to_f / feeds.count
   end
 
   def feeling
@@ -33,7 +33,7 @@ class Pet < ActiveRecord::Base
       "very sad."
     end
   end
-  
+
   def health_icon
     if health_index > 0.8
       "/assets/scale/state-5.png"

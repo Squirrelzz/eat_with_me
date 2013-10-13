@@ -16,7 +16,7 @@ Squirrelzz::Application.routes.draw do
       get :journal
     end
   end
-  resources :meals_person, only: [:create]
+  resources :meals_people, only: [:create]
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
