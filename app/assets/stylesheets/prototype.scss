@@ -35,12 +35,12 @@ section[class*='screen'] {
     border-radius: 2em;
     border: .5em double $light;
   @include background-clip(padding-box);
-	
+
     p {
       text-align: center;
     }
     &.selected {
-      
+
 	  border: .5em double $royal;
 	  @include background-clip(padding-box);
     }
