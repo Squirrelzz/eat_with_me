@@ -1,9 +1,15 @@
 $background: url(/assets/geometry.png) #f2eedc;
 $card: url(/assets/knit2.png);
+$card2: url(/assets/knit3.png);
+$card3: url(/assets/knit4.png);
+$card4: url(/assets/knit5.png);
 $highlight: #9ACD6C;
 $transLight: rgba(247,245,235,.75);
 $royal: #361984;
-$light: #B4ACD1;
+$lightPurple: #B4ACD1;
+$lightBlue: #A1D1E2;
+$lightGreen: #B2CC96;
+$lightRed: #E2ACA1;
 $coral: #ED9685;
 $lilaLight: rgba(180, 172, 209, .25);
 
@@ -31,19 +37,36 @@ section[class*='screen'] {
 .screen--character {
   .character {
     min-height: 5em;
-    background: $card;
     border-radius: 2em;
-    border: .5em double $light;
-  @include background-clip(padding-box);
-
+    border: .5em double $lightPurple;
+  	
+	&:nth-child(1) {
+		background: $card;
+		@include background-clip(padding-box);
+	}
+  	&:nth-child(2) {
+		background: $card2;
+		@include background-clip(padding-box);
+		border-color: $lightBlue;
+	}
+  	&:nth-child(3) {
+		background: $card3;
+		@include background-clip(padding-box);
+		border-color: $lightGreen;
+	}
+  	&:nth-child(4) {
+		background: $card4;
+		@include background-clip(padding-box);
+		border-color: $lightRed;
+	}
     p {
       text-align: center;
     }
     &.selected {
-
 	  border: .5em double $royal;
 	  @include background-clip(padding-box);
     }
+	
 
     .information {
       display: none;
