@@ -14,9 +14,10 @@ class FeedsController < ApplicationController
           render json: {
             meal_id: @feed.meal_id,
             pet_id: @feed.pet_id,
-            health_index: @feed.pet.health_index,
-            health_icon: @feed.pet.health_icon,
-            coins: @feed.pet.coins
+            meal_name: @feed.meal_name.titleize,
+            health_index: @feed.pet_health_index,
+            health_icon: @feed.pet_health_icon,
+            coins: @feed.pet_coins
           }.to_json
         }
       end
