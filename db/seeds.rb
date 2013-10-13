@@ -42,61 +42,61 @@ Meal.find_or_create_by(name: "spinach") do |m|
 end
 
 Meal.find_or_create_by(name: "candy") do |m|
-  m.qualification = "b-bad"
+  m.qualification = "c-bad"
   m.points = 0
   m.image_url = "meal/candy.png"
 end
 
 Meal.find_or_create_by(name: "chocolate milk") do |m|
-  m.qualification = "b-bad"
+  m.qualification = "c-bad"
   m.points = 0
   m.image_url = "meal/chocolatemilk.png"
 end
 
 Meal.find_or_create_by(name: "donut") do |m|
-  m.qualification = "b-bad"
+  m.qualification = "c-bad"
   m.points = 0
   m.image_url = "meal/donut.png"
 end
 
 Meal.find_or_create_by(name: "soda can") do |m|
-  m.qualification = "b-bad"
+  m.qualification = "c-bad"
   m.points = 0
   m.image_url = "meal/sodacan.png"
 end
 
 Meal.find_or_create_by(name: "banana") do |m|
-  m.qualification = "c-neutral"
+  m.qualification = "b-neutral"
   m.points = 20
   m.image_url = "meal/banana.png"
 end
 
 Meal.find_or_create_by(name: "bread") do |m|
-  m.qualification = "c-neutral"
+  m.qualification = "b-neutral"
   m.points = 20
   m.image_url = "meal/bread.png"
 end
 
 Meal.find_or_create_by(name: "corn") do |m|
-  m.qualification = "c-neutral"
+  m.qualification = "b-neutral"
   m.points = 20
   m.image_url = "meal/corn.png"
 end
 
 Meal.find_or_create_by(name: "juice") do |m|
-  m.qualification = "c-neutral"
+  m.qualification = "b-neutral"
   m.points = 20
   m.image_url = "meal/juice.png"
 end
 
 Meal.find_or_create_by(name: "orange") do |m|
-  m.qualification = "c-neutral"
+  m.qualification = "b-neutral"
   m.points = 20
   m.image_url = "meal/orange.png"
 end
 
 Meal.find_or_create_by(name: "peach") do |m|
-  m.qualification = "c-neutral"
+  m.qualification = "b-neutral"
   m.points = 20
   m.image_url = "meal/peach.png"
 end
