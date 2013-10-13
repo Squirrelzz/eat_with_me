@@ -17,43 +17,57 @@
 			<h2>Choose Character</h2>
         	
 			<div class="row">
-				<div class="small-6 columns character bear">
-					<img src="http://placekitten.com/g/300/300">
+				<div class="small-6 large-3 columns character bear">
+					<%= image_tag "bear-ns.png" %>
 					<p>bear</p>
 					
 					<div class="information">
 						<label>Name</label>
 							<input type="text" placeholder="large-12.columns">
+						<label>Gender</label>
+							<input type="radio" name="gender" value="male"> Male
+							<input type="radio" name="gender" value="female"> Female
+							
 						<button class="button small">Save</button>
 					</div>
 				</div>
-				<div class="small-6 columns character rabbit">
-					<img src="http://placekitten.com/g/300/300">
+				<div class="small-6 large-3 columns character rabbit">
+					<%= image_tag "rabbit-ns.png" %>
+
 					<p>rabbit</p>
 					
 					<div class="information">
 						<label>Name</label>
 							<input type="text" placeholder="large-12.columns">
+							<label>Gender</label>
+								<input type="radio" name="gender" value="male"> Male
+								<input type="radio" name="gender" value="female"> Female
 						<button class="button small">Save</button>
 					</div>
 				</div>
-				<div class="small-6 columns character cat">
-					<img src="http://placekitten.com/g/300/300">
+				<div class="small-6 large-3 columns character cat">
+					<%= image_tag "cat-ns.png" %>
 					<p>cat</p>
 					
 					<div class="information">
 						<label>Name</label>
 							<input type="text" placeholder="large-12.columns">
+							<label>Gender</label>
+								<input type="radio" name="gender" value="male"> Male
+								<input type="radio" name="gender" value="female"> Female
 						<button class="button small">Save</button>
 					</div>
 				</div>
-				<div class="small-6 columns character dog">
+				<div class="small-6 large-3 columns character dog">
 					<img src="http://placekitten.com/g/300/300">
 					<p>dog</p>
 					
 					<div class="information">
 						<label>Name</label>
 							<input type="text" placeholder="large-12.columns">
+							<label>Gender</label>
+								<input type="radio" name="gender" value="male"> Male
+								<input type="radio" name="gender" value="female"> Female
 						<button class="button small">Save</button>
 					</div>
 				</div>
@@ -79,7 +93,7 @@
 			</div>
 			<div class="row">
 				<div class="small-12 columns">
-					<img src="http://placekitten.com/g/400/400" class="icon--character">
+					<%= image_tag "bear.png" %>
 					<h2>Bear</h2>
 				</div>
 			</div>
@@ -133,7 +147,7 @@
 			</div>
 			<div class="row">
 				<div class="small-12 columns">
-					<img src="http://placekitten.com/g/400/400" class="icon--character">
+					<%= image_tag "bear.png" %>
 					<h2>Bear</h2>
 				</div>
 			</div>

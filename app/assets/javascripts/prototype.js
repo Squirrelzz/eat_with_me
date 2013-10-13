@@ -13,8 +13,8 @@
 			$("body").on("click", ".screen--character .character", function() {
 				
 				
-				var test = eatWithMe.characterSelect($(this));
-				test.about();
+				var chars = eatWithMe.characterSelect($(this));
+				chars.about();
 				
 			})
 			
