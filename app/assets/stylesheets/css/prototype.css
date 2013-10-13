@@ -1,5 +1,5 @@
 body {
-  background: url(/assets/geometry.png); }
+  background: url(/assets/geometry.png) #f2eedc; }
 
 fieldset {
   border: none;
@@ -57,3 +57,6 @@ section[class*='screen'] {
 
 .draggable {
   cursor: move; }
+
+.reveal-modal > :first-child {
+  margin: 0 !important; }
