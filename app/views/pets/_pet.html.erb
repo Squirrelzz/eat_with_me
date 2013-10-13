@@ -9,7 +9,7 @@
       <div id="scale">
         <%= image_tag pet.health_icon, title: pet.feeds.count, id: "health_icon" %>
         <%= image_tag "scale/bar.png", id: "bar" %>
-        <%= image_tag "scale/tick.png", id: "tick" %>
+        <%= content_tag :span, "", id: "tick" %>
       </div>
     </p>
   </div>
@@ -31,7 +31,6 @@
 
 <script>
   function positionTick(index) {
-    debugger;
     left = 14 + 220 * index;
     $("#tick").css({ left: left + "px" });
   }
