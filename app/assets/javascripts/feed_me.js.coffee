@@ -43,6 +43,7 @@ class FeedMe
         $("#food-value").html(data.value)
         $("#feeling").html(data.feeling)
         $("#happiness").attr('src', data.happiness)
+        $("#pet-image").attr('src', "/images/#{data.pet_image}")
         positionTick(data.health_index)
 
       error: (xhr, status, error) ->

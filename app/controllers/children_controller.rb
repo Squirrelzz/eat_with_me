@@ -2,9 +2,6 @@ class ChildrenController < ApplicationController
 
   before_filter :find_user, :find_child
 
-  def menu
-  end
-
   def journal
   end
 

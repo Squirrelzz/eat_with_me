@@ -2,20 +2,28 @@
 
 <h2>What did <%= @child.name %> eat today?</h2>
 
-<div id="journal">
-  <% Meal.all.each do |meal| %>
-    <%= content_tag :div, class: "small-3 large-2 columns meal", data: { meal_id: meal.id, person_id: @child.id } do %>
-      <%= image_tag meal.image_url %>
-      <%= content_tag :span, meal.name.titleize %>
-      <%= content_tag :span, id: "meal_#{meal.id}_person_#{@child.id}" do %>
-        <% if @child.meals_people.find_by_meal_id(meal.id).present? %>
-          [OK]
+<div class="row">
+  <div id="journal">
+    <% Meal.all.each do |meal| %>
+      <%= content_tag :div, class: "small-3 large-2 columns meal", data: { meal_id: meal.id, person_id: @child.id } do %>
+        <%= image_tag meal.image_url %>
+        <%= content_tag :span, meal.name.titleize %>
+        <%= content_tag :span, id: "meal_#{meal.id}_person_#{@child.id}" do %>
+          <% if @child.meals_people.find_by_meal_id(meal.id).present? %>
+            [OK]
+          <% end %>
         <% end %>
       <% end %>
     <% end %>
-  <% end %>
-
-  <% content_for :dom_ready do %>
-    new MealPerson($(".meal"));
-  <% end %>
+    <div class="columns"></div>
+  </div>
 </div>
+<div class="row">
+  <div class="columns">
+    <ul id="log"></ul>
+  </div>
+</div>
+
+<% content_for :dom_ready do %>
+  new MealPerson($(".meal"));
+<% end %>

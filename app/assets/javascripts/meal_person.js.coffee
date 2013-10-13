@@ -19,8 +19,6 @@ class MealPerson
         id = "#meal_#{data.meal_id}_person_#{data.person_id}"
         $ele = $(id)
         $ele.html("[Yum!]")
-
-      error: =>
-        debugger
+        $("#log").append($("<li></li>").text(data.meal_name))
 
 window.MealPerson = MealPerson

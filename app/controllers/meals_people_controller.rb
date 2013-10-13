@@ -6,7 +6,11 @@ class MealsPeopleController < ApplicationController
     if @meals_person.save
       respond_to do |format|
         format.json do
-          render json: @meals_person.to_json
+          render json: {
+            meal_id: @meals_person.meal_id,
+            person_id: @meals_person.person_id,
+            meal_name: @meals_person.meal.name.titleize
+          }.to_json
         end
       end
     end

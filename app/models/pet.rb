@@ -49,4 +49,12 @@ class Pet < ActiveRecord::Base
       "/images/scale/state-1.png"
     end
   end
+
+  def pet_image
+    if health_index < 0.4
+      "#{image_url}_sad.png"
+    else
+      "#{image_url}_close.png"
+    end
+  end
 end

@@ -59,7 +59,7 @@ section[class*='screen'] {
     min-height: 5em;
     border-radius: 2em;
     border: .5em double $lightPurple;
-  	
+
 	&:nth-child(1) {
 		background: $card;
 		@include background-clip(padding-box);
@@ -86,7 +86,7 @@ section[class*='screen'] {
 	  border: .5em double $royal;
 	  @include background-clip(padding-box);
     }
-	
+
 
     .information {
       display: none;
@@ -137,7 +137,7 @@ section[class*='screen'] {
 		text-align: center;
 	}
   }
-  
+
 
 
 }
@@ -157,7 +157,7 @@ section[class*='screen'] {
 	}
 }
 #journal {
-	div {
+	div.meal {
 		text-align: center;
 		height: 150px;
 		span {
