@@ -1,7 +1,7 @@
 <section class="screen--character">
   <p>Welcome, <%= @person.name %>!</p>
 
-  <h2>Take your pet home!</h2>
+  <h2>Take your pet home</h2>
 
   <div class="row">
     <% Character.all.each do |character| %>
@@ -11,15 +11,17 @@
 
 
         <div class="information">
-          <%= semantic_form_for Pet.new do |f| %>
-            <%= f.input :name, placeholder: "Name me" %>
-            <%= f.input :sex, as: :radio, collection: %w[Boy Girl] %>
-            <%= f.input :character_id, value: character.id, as: :hidden %>
-            <%= f.input :person_id, value: @person.id, as: :hidden %>
-            <%= f.actions do %>
-              <%= f.action :submit, label: "Save", button_html: { class: "button round"} %>
-            <% end %>
-          <% end %>
+          <%= image_tag "#{character.name}-ns.png" %>
+
+		  <%= form_for Pet.new do |f| %>
+			<%= f.text_field :name, placeholder: "Name your pet!" %>
+			<label class="gender"><%= f.radio_button :sex, "Boy" %> Boy</label>
+		  	<label class="gender"><%= f.radio_button :sex, "Girl" %> Girl</label>
+			<%= f.hidden_field :character_id, value: character.id %>
+			<%= f.hidden_field :person_id, value: @person.id %>
+			
+			<%= f.submit "Save", class: "button round success" %>
+		  <% end %>
         </div>
       </div>
     <% end %>

@@ -5,6 +5,7 @@ $card3: url(/assets/bg/knit4.png);
 $card4: url(/assets/bg/knit5.png);
 $highlight: #9ACD6C;
 $transLight: rgba(247,245,235,.85);
+$beige: #F7F5EB;
 $royal: #361984;
 $lightPurple: #B4ACD1;
 $lightBlue: #A1D1E2;
@@ -78,7 +79,7 @@ section[class*='screen'] {
 
     .information {
       display: none;
-      background: $transLight;
+      background: $beige;
       border-radius: 1.75em;
 	  padding: 1em;
       position: absolute;
@@ -88,8 +89,27 @@ section[class*='screen'] {
 	  li {
 		  list-style-type: none;
 	  }
+	  fieldset {
+		  padding: 0 !important;
+	  }
 	  .label, .label label {
 	  	  display: none;
+	  }
+	  img {
+		  width: 50%;
+	  }
+	  #pet_name {
+		  font-size: 1.25em;
+		  border-radius: 20px;
+	  }
+	  .gender {
+		  display: inline-block;
+		  font-size: 1.25em;
+	  }
+	  .button {
+		  display: block;
+		  text-align: center;
+		  margin: auto;
 	  }
     }
   }
