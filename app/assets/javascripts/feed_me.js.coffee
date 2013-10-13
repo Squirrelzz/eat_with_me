@@ -17,7 +17,7 @@ class FeedMe
 
   drop: (event, ui) =>
     @deactivate(event, ui)
-    $(".tooltip").hide()
+    
 	
     Foundation.libs.reveal.settings.animation = "fade"
 	
@@ -35,6 +35,7 @@ class FeedMe
       data: feed
 
       success: (data) =>
+        $(".tooltip").hide()
         $("#health_icon").attr("src", data.health_icon)
         $("#coins").html(data.coins)
         $("#food-name").html(data.meal_name)
@@ -42,8 +43,8 @@ class FeedMe
         $("#food-value").html(data.value)
         $("#feeling").html(data.feeling)
         $("#happiness").attr("src", data.happiness)
-        positionTick(data.health_index)
         $("#justFed").foundation("reveal", "open")
+        positionTick(data.health_index)
 
       error: (xhr, status, error) ->
 
