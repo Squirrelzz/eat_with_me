@@ -1,5 +1,5 @@
 class Feed < ActiveRecord::Base
-  belongs_to :meal
+  belongs_to :meals_person
   belongs_to :pet
 
   delegate :name, :qualification, to: :meal, prefix: true

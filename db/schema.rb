@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131013002510) do
+ActiveRecord::Schema.define(version: 20131013143401) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20131013002510) do
 
   create_table "feeds", force: true do |t|
     t.integer  "pet_id"
-    t.integer  "meal_id"
+    t.integer  "meals_person_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -48,6 +48,11 @@ ActiveRecord::Schema.define(version: 20131013002510) do
     t.string  "qualification"
     t.integer "points"
     t.string  "image_url"
+  end
+
+  create_table "meals_people", force: true do |t|
+    t.integer "meal_id"
+    t.integer "person_id"
   end
 
   create_table "people", force: true do |t|
