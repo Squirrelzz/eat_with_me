@@ -1,0 +1,28 @@
+<section class="screen--character">
+  <p>Welcome, <%= @person.name %>!</p>
+
+  <h2>Choose Character</h2>
+
+  <div class="row">
+    <% Character.all.each do |character| %>
+      <div class="small-6 large-3 columns character <%= character.name %>">
+        <%= image_tag "#{character.name}-ns.png"%>
+        <p><%= character.name %></p>
+
+
+        <div class="information">
+          <%= semantic_form_for Pet.new do |f| %>
+            <%= f.input :name %>
+            <%= f.input :sex, as: :radio, collection: %w[Male Female] %>
+            <%= f.input :character_id, value: character.id, as: :hidden %>
+            <%= f.input :person_id, value: @person.id, as: :hidden %>
+            <%= f.actions do %>
+              <%= f.action :submit, label: "Save" %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+    <div class="columns"></div>
+  </div>
+</section>

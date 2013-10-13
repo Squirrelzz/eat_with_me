@@ -1,0 +1,48 @@
+<p>Welcome, <%= @pet.person_name %>!</p>
+
+<section class="screen--feed">
+  <div class="row header">
+    <div class="small-4 columns coins">
+      $ coins
+    </div>
+
+    <div class="small-8 columns">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns">
+      [[health bar]]
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <%= image_tag "#{@pet.image_url}.png" %>
+      <h2><%= @pet.name %></h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns">
+      TODAY
+    </div>
+  </div>
+
+  <% Meal.all.each do |meal| %>
+    <div class="row">
+      <div class="small-2 columns">
+        <%= image_tag meal.image_url %>
+      </div>
+
+      <div class="small-2 columns">
+        <%= meal.name.titleize %>
+      </div>
+
+      <div class="small-2 columns">
+        <%= meal.qualification %>
+      </div>
+      <div class="columns"></div>
+    </div>
+  <% end %>
+</section>

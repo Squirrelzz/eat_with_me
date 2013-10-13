@@ -7,138 +7,13 @@
 					<h2>Bear</h2>
 				</div>
 			</div>
-			<p>Welcome, [[JACKIE]]!</p>
-        	
-			<button class="large button round">Start!</button>
-			
-		</section>
-		
-		<section class="screen--character">
-			<h2>Choose Character</h2>
-        	
-			<div class="row">
-				<div class="small-6 large-3 columns character bear">
-					<%= image_tag "bear-ns.png" %>
-					<p>bear</p>
-					
-					<div class="information">
-						<label>Name</label>
-							<input type="text" placeholder="large-12.columns">
-						<label>Gender</label>
-							<input type="radio" name="gender" value="male"> Male
-							<input type="radio" name="gender" value="female"> Female
-							
-						<button class="button small">Save</button>
-					</div>
-				</div>
-				<div class="small-6 large-3 columns character rabbit">
-					<%= image_tag "rabbit-ns.png" %>
+      <p>Welcome, <%= current_user.email %>!</p>
 
-					<p>rabbit</p>
-					
-					<div class="information">
-						<label>Name</label>
-							<input type="text" placeholder="large-12.columns">
-							<label>Gender</label>
-								<input type="radio" name="gender" value="male"> Male
-								<input type="radio" name="gender" value="female"> Female
-						<button class="button small">Save</button>
-					</div>
-				</div>
-				<div class="small-6 large-3 columns character cat">
-					<%= image_tag "cat-ns.png" %>
-					<p>cat</p>
-					
-					<div class="information">
-						<label>Name</label>
-							<input type="text" placeholder="large-12.columns">
-							<label>Gender</label>
-								<input type="radio" name="gender" value="male"> Male
-								<input type="radio" name="gender" value="female"> Female
-						<button class="button small">Save</button>
-					</div>
-				</div>
-				<div class="small-6 large-3 columns character dog">
-					<img src="http://placekitten.com/g/300/300">
-					<p>dog</p>
-					
-					<div class="information">
-						<label>Name</label>
-							<input type="text" placeholder="large-12.columns">
-							<label>Gender</label>
-								<input type="radio" name="gender" value="male"> Male
-								<input type="radio" name="gender" value="female"> Female
-						<button class="button small">Save</button>
-					</div>
-				</div>
-			</div>
-			
-	
-			
+			<button class="large button round">Start!</button>
+
 		</section>
-		
-		<section class="screen--feed">
-			<div class="row header">
-				<div class="small-4 columns coins">
-					$ coins
-				</div>
-				<div class="small-8 columns">
-					
-				</div>
-			</div>
-			<div class="row">
-				<div class="small-12 columns">
-					[[health bar]]
-				</div>
-			</div>
-			<div class="row">
-				<div class="small-12 columns">
-					<%= image_tag "bear.png" %>
-					<h2>Bear</h2>
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="small-12 columns">
-					TODAY
-				</div>
-			</div>
-			
-			<div class="row">
-				<div class="small-2 columns">
-					<img src="http://placekitten.com/g/50/40">
-				</div>
-				<div class="small-2 columns">
-					Broccoli
-				</div>
-				<div class="small-2 columns">
-					o
-				</div>
-			</div>
-			<div class="row">
-				<div class="small-2 columns">
-					<img src="http://placekitten.com/g/50/40">
-				</div>
-				<div class="small-2 columns">
-					Corn
-				</div>
-				<div class="small-2 columns">
-					o
-				</div>
-			</div>
-			<div class="row">
-				<div class="small-2 columns">
-					<img src="http://placekitten.com/g/50/40">
-				</div>
-				<div class="small-2 columns">
-					Pepsi
-				</div>
-				<div class="small-2 columns">
-					o
-				</div>
-			</div>
-		</section>
-		
+
+
 		<section class="screen--status">
 			<div class="row">
 				<div class="small-12 columns">
@@ -152,4 +27,4 @@
 				</div>
 			</div>
 		</section>
-			
+
