@@ -1,9 +1,10 @@
 $background: url(/assets/geometry.png);
-$card: #43B7E9;
+$card: url(/assets/knit2.png);
 $highlight: #9ACD6C;
 $infoCard: rgba(247,245,235,.75);
 $royal: #361984;
-$light: #7A59EF;
+$light: #B4ACD1;
+$coral: #ED9685;
 
 @mixin background-clip($clip) {
   -webkit-background-clip: $clip;
@@ -38,7 +39,7 @@ section[class*='screen'] {
       text-align: center;
     }
     &.selected {
-      background: $highlight;
+      
 	  border: .5em double $royal;
 	  @include background-clip(padding-box);
     }

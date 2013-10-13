@@ -10,16 +10,15 @@ section[class*='screen'] {
 
 .screen--character .character {
   min-height: 5em;
-  background: #43b7e9;
+  background: url(/assets/knit2.png);
   border-radius: 2em;
-  border: 0.5em double #7a59ef;
+  border: 0.5em double #b4acd1;
   -webkit-background-clip: padding-box;
   -moz-background-clip: padding-box;
   background-clip: padding-box; }
   .screen--character .character p {
     text-align: center; }
   .screen--character .character.selected {
-    background: #9acd6c;
     border: 0.5em double #361984;
     -webkit-background-clip: padding-box;
     -moz-background-clip: padding-box;

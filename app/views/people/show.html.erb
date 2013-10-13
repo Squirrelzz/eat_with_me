@@ -12,12 +12,12 @@
 
         <div class="information">
           <%= semantic_form_for Pet.new do |f| %>
-            <%= f.input :name %>
+            <%= f.input :name, placeholder: "Name me" %>
             <%= f.input :sex, as: :radio, collection: %w[Boy Girl] %>
             <%= f.input :character_id, value: character.id, as: :hidden %>
             <%= f.input :person_id, value: @person.id, as: :hidden %>
             <%= f.actions do %>
-              <%= f.action :submit, label: "Save" %>
+              <%= f.action :submit, label: "Save", button_html: { class: "button"} %>
             <% end %>
           <% end %>
         </div>
