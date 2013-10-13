@@ -5,14 +5,14 @@
 
   <div class="row">
     <div class="small-12 columns">
-		Today, we ate...
+      Today, we ate...
     </div>
   </div>
 
   <div class="row food">
     <% Meal.all.each do |meal| %>
       <div class="small-3 large-2 columns">
-        <%= image_tag meal.image_url, class: ["draggable"], data: { meal_id: meal.id, pet_id: @pet.id } %>
+        <%= image_tag meal.image_url, title: meal.name.titleize, class: ["draggable"], data: { meal_id: meal.id, pet_id: @pet.id, tooltip: "", :"tip-id" => meal.id } %>
       </div>
     <% end %>
     <div class="columns"></div>
