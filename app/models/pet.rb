@@ -11,6 +11,8 @@ class Pet < ActiveRecord::Base
   end
 
   def health_index
+    return 0.5 if feeds.count == 0
+
     values = {
       "a-good"    =>  1,
       "b-neutral" =>  0,
