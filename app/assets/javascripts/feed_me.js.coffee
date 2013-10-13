@@ -1,9 +1,21 @@
 class FeedMe
   constructor: ->
     $('.draggable').draggable(revert: "invalid")
-    $('.droppable').droppable(drop: @drop)
+    $('.droppable').droppable
+      activeClass: "open"
+      drop: @drop
+      activate: @activate
+      deactivate: @deactivate
+
+  activate: (event, ui) =>
+    $ele = $(event.target)
+    $ele.attr('src', $ele.data("open"))
+  deactivate: (event, ui) =>
+    $ele = $(event.target)
+    $ele.attr('src', $ele.data("closed"))
 
   drop: (event, ui) =>
+    @deactivate(event, ui)
     feed =
       feed:
         meal_id: ui.draggable.data("mealId")
