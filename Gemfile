@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 gem 'thin'
 gem 'mysql2'
+gem 'pg'
 gem 'zurb-foundation', '~> 4.0.0'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
@@ -41,6 +42,7 @@ gem 'responders',          github: 'plataformatec/responders'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 group :development do
+  gem "rails-dev-boost", git: "git://github.com/thedarkone/rails-dev-boost.git"
   gem "pry-debugger"
   gem "rails-dev-boost", git: "git://github.com/thedarkone/rails-dev-boost.git"
   gem "better_errors", git: "https://github.com/charliesome/better_errors.git"

@@ -11,7 +11,7 @@ test:
   timeout: 5000
 
 production:
-  adapter: mysql2
+  adapter: postgresql
   database: feast20013_production
   pool: 5
   timeout: 5000
