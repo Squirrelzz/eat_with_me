@@ -1,0 +1,52 @@
+@font-face {
+	font-family: 'ewm';
+	src:url('fonts/ewm.eot');
+	src:url('fonts/ewm.eot?#iefix') format('embedded-opentype'),
+		url('fonts/ewm.woff') format('woff'),
+		url('fonts/ewm.ttf') format('truetype'),
+		url('fonts/ewm.svg#ewm') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+	font-family: 'ewm';
+	content: attr(data-icon);
+	speak: none;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon-smiley, .icon-sad, .icon-neutral, .icon-star {
+	font-family: 'ewm';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+.icon-smiley:before {
+	content: "\e000";
+}
+.icon-sad:before {
+	content: "\e001";
+}
+.icon-neutral:before {
+	content: "\e002";
+}
+.icon-star:before {
+	content: "\e003";
+}
