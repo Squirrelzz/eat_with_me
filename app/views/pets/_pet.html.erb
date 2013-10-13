@@ -1,18 +1,17 @@
-<div class="row header">
+<div class="row feed-header">
   <div class="small-4 columns coins">
     $ <%= pet.coins %>
   </div>
 
   <div class="small-8 columns">
+	  <p>
+	 <%= pet.name %> feels
+    <%= image_tag pet.health_icon, title: pet.feeds.count %>
+    <span>(<%= pet.health_index %>)</span>
+	</p>
   </div>
 </div>
 
-<div class="row">
-  <div class="small-12 columns">
-    <%= image_tag pet.health_icon, title: pet.feeds.count %>
-    (<%= pet.health_index %>)
-  </div>
-</div>
 
 <div class="row">
   <div class="small-12 columns">

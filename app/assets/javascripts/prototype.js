@@ -5,6 +5,7 @@
 			'test' : "#facade",
 			
 			'charSelect' : ".screen--character",
+			'status' : ".foods .status"
 		},
 
 		'init' : function() {
@@ -16,7 +17,10 @@
 				var chars = eatWithMe.characterSelect($(this));
 				chars.about();
 				
+				
 			})
+			
+			
 			
 			$(".information").hide();
 
@@ -37,15 +41,14 @@
 				
 			}
 			function info() {
-				var animal = element.attr("class").slice(26);
-				console.log(animal);
+				var height = parseInt(element.height(), 10);
+				var width = parseInt(element.width(), 10);
 				
-				
-				
-				console.log("hey this worked!");
-				
-				element.find(".information").show();
+				console.log(height)
+			
+				element.find(".information").fadeIn().css("margin-top", -height).css("margin-left", -15).height(height-32).width(width);
 			}
+	
 
 			return {
 				'about' : function() {

@@ -3,7 +3,7 @@ body {
 
 fieldset {
   border: none;
-  padding: none; }
+  padding: none !important; }
 
 section[class*='screen'] {
   text-align: center; }
@@ -26,22 +26,31 @@ section[class*='screen'] {
   .screen--character .character .information {
     display: none;
     background: rgba(247, 245, 235, 0.75);
+    border-radius: 1.75em;
     padding: 1em;
     position: absolute;
     min-height: 5em;
-    margin-top: -20em;
     z-index: 10; }
     .screen--character .character .information li {
       list-style-type: none; }
     .screen--character .character .information .label, .screen--character .character .information .label label {
       display: none; }
 
-.screen--feed .header {
-  background: blue;
+.screen--feed .feed-header {
+  background: rgba(247, 245, 235, 0.75);
   padding: 1em; }
-  .screen--feed .header .coins {
+  .screen--feed .feed-header div:first-child {
     text-align: left; }
+  .screen--feed .feed-header div:last-child {
+    text-align: right; }
 
 .icon--character {
   width: 75%;
   margin: 0 auto; }
+
+.foods {
+  padding: 1em;
+  border-bottom: 0.1em dotted #ed9685;
+  text-align: left; }
+  .foods div:nth-child(4n-2) {
+    text-align: center; }
