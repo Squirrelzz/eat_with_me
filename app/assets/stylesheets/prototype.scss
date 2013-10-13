@@ -105,12 +105,10 @@ section[class*='screen'] {
   width: 75%;
   margin: 0 auto;
 }
-.foods {
-	padding: 1em;
-	border-bottom: .1em dotted $coral;
-	text-align: left;
-	div:nth-child(4n-2) {
-		text-align: center;
+.food {
+	img {
+		min-height: 4em;
+		margin-bottom: 1.25em;
 	}
 }
 
