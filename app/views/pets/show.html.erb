@@ -19,10 +19,10 @@
   </div>
 </section>
 
-<div id="justFed" class="reveal-modal large text-center">
-  <h2>You just ate <span id='food-name'>FOOD_NAME</span></h2>
-  <p><span id="food-name-1">FOOD_NAME</span> is <span id="food-healthy">[[healthy]]</span></p>
-  <p>+ <span id="food-value">x</span> Coins</p>
+<div id="justFed" class="reveal-modal small text-center">
+  <h2><span id='food-name'>FOOD_NAME</span></h2>
+  <p class="pop-health"><%= image_tag nil, id: "happiness" %> <span id="food-healthy">[[healthy]]</span></p>
+  <h3 class="pop-money"><%= image_tag "money.png" %> + <span id="food-value">x</span> </h3>
   <p><%= @pet.name %> is feeling <span id="feeling">xxx</span></p>
   <a class="close-reveal-modal">&#215;</a>
 </div>

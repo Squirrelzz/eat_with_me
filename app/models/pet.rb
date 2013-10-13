@@ -33,7 +33,7 @@ class Pet < ActiveRecord::Base
       "very sad."
     end
   end
-
+  
   def health_icon
     if health_index > 0.8
       "/assets/scale/state-5.png"

@@ -18,7 +18,8 @@ class FeedsController < ApplicationController
             coins: @feed.pet_coins,
             value: @feed.meal.points,
             how_healthy: how_healthy(@feed.meal.qualification),
-            feeling: @feed.pet.feeling
+            feeling: @feed.pet.feeling,
+            happiness: @feed.happiness
           }.to_json
         }
       end

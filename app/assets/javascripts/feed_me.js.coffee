@@ -35,10 +35,10 @@ class FeedMe
         $("#coins").html(data.coins)
         $("#justFed").foundation("reveal", "open")
         $("#food-name").html(data.meal_name)
-        $("#food-name-1").html(data.meal_name)
         $("#food-healthy").html(data.how_healthy)
         $("#food-value").html(data.value)
         $("#feeling").html(data.feeling)
+        $("#happiness").attr("src", data.happiness)
         positionTick(data.health_index)
 
       error: (xhr, status, error) ->
