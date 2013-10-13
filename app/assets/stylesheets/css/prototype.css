@@ -54,3 +54,6 @@ section[class*='screen'] {
   text-align: left; }
   .foods div:nth-child(4n-2) {
     text-align: center; }
+
+.draggable {
+  cursor: move; }
