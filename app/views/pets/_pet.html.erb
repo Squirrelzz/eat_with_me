@@ -1,17 +1,17 @@
 <div class="row feed-header">
-  <div class="small-4 columns coins">
+  <div class="large-2 columns coins">
     $ <span id="coins"><%= pet.coins %></span>
   </div>
 
-  <div class="small-8 columns">
-    <p>
-      <%= pet.name %> feels
+  <div class="large-8 columns">
       <div id="scale">
         <%= image_tag pet.health_icon, title: pet.feeds.count, id: "health_icon" %>
         <%= image_tag "scale/bar.png", id: "bar" %>
         <%= content_tag :span, "", id: "tick" %>
       </div>
-    </p>
+  </div>
+  
+  <div class="large-2 columns">
   </div>
 </div>
 
