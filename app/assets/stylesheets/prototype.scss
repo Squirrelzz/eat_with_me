@@ -150,10 +150,19 @@ section[class*='screen'] {
   width: 75%;
   margin: 0 auto;
 }
-.food {
+.food, #journal {
 	img {
 		min-height: 4em;
 		margin-bottom: 1.25em;
+	}
+}
+#journal {
+	div {
+		text-align: center;
+		height: 150px;
+		span {
+			display: block;
+		}
 	}
 }
 .pop-health, .pop-money {

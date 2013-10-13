@@ -18,7 +18,7 @@ class MealPerson
       success: (data) =>
         id = "#meal_#{data.meal_id}_person_#{data.person_id}"
         $ele = $(id)
-        $ele.html("[OK]")
+        $ele.html("[Yum!]")
 
       error: =>
         debugger
