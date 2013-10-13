@@ -3,7 +3,7 @@ class CreateMeal < ActiveRecord::Migration
     create_table :meals do |t|
       t.string :name
       t.string :qualification
-      t.string :points
+      t.integer :points
       t.string :image_url
     end
   end

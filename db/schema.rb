@@ -44,10 +44,10 @@ ActiveRecord::Schema.define(version: 20131013002510) do
   end
 
   create_table "meals", force: true do |t|
-    t.string "name"
-    t.string "qualification"
-    t.string "points"
-    t.string "image_url"
+    t.string  "name"
+    t.string  "qualification"
+    t.integer "points"
+    t.string  "image_url"
   end
 
   create_table "people", force: true do |t|

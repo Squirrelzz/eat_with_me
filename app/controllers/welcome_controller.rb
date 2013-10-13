@@ -3,6 +3,11 @@ class WelcomeController < ApplicationController
 
   def index
     @person = current_user.people.first
-    redirect_to person_path(@person)
+
+    if @person.pets.any?
+      redirect_to pet_path(@person.pets.first)
+    else
+      redirect_to person_path(@person)
+    end
   end
 end
