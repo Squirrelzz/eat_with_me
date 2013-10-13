@@ -1,27 +1,7 @@
 <p>Welcome, <%= @pet.person_name %>!</p>
 
 <section class="screen--feed">
-  <div class="row header">
-    <div class="small-4 columns coins">
-      $ coins
-    </div>
-
-    <div class="small-8 columns">
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="small-12 columns">
-      [[health bar]]
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="small-12 columns">
-      <%= image_tag "#{@pet.image_url}.png" %>
-      <h2><%= @pet.name %></h2>
-    </div>
-  </div>
+  <%= render @pet %>
 
   <div class="row">
     <div class="small-12 columns">
@@ -42,6 +22,15 @@
       <div class="small-2 columns">
         <%= meal.qualification %>
       </div>
+
+      <div class="small-2 columns">
+        <%= form_for Feed.new do |f| %>
+          <%= f.hidden_field :pet_id, value: @pet.id %>
+          <%= f.hidden_field :meal_id, value: meal.id %>
+          <%= f.submit value: "Feed" %>
+        <% end %>
+      </div>
+
       <div class="columns"></div>
     </div>
   <% end %>

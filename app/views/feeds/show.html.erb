@@ -1,0 +1,17 @@
+<% pet = @feed.pet %>
+<% meal = @feed.meal %>
+
+<p>Welcome, <%= pet.person_name %>!</p>
+
+<section class="screen--feed">
+  <%= render pet %>
+
+  <h1>YOU JUST ATE <%= meal.name.titleize %>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <%= link_to "DISMISS", pet_path(pet) %>
+    </div>
+  </div>
+
+</section>
