@@ -20,89 +20,89 @@ Character.find_or_create_by(name: "dog", image_url: "bear")
 Meal.find_or_create_by(name: "tomato") do |m|
   m.qualification = "good"
   m.points = 100
-  m.image_url = "tomato"
+  m.image_url = "meal/tomato.png"
 end
 
 Meal.find_or_create_by(name: "corn") do |m|
   m.qualification = "good"
   m.points = 100
-  m.image_url = "corn"
+  m.image_url = "meal/corn.png"
 end
 
 Meal.find_or_create_by(name: "asparagus") do |m|
   m.qualification = "good"
   m.points = 100
-  m.image_url = "asparagus"
+  m.image_url = "meal/asparagus.png"
 end
 
 Meal.find_or_create_by(name: "broccoli") do |m|
   m.qualification = "good"
   m.points = 100
-  m.image_url = "broccoli"
+  m.image_url = "meal/broccoli.png"
 end
 
 Meal.find_or_create_by(name: "spinach") do |m|
   m.qualification = "good"
   m.points = 100
-  m.image_url = "spinach"
+  m.image_url = "meal/spinach.png"
 end
 
 Meal.find_or_create_by(name: "candy") do |m|
   m.qualification = "bad"
   m.points = 0
-  m.image_url = "candy"
+  m.image_url = "meal/candy.png"
 end
 
 Meal.find_or_create_by(name: "chocolate milk") do |m|
   m.qualification = "bad"
   m.points = 0
-  m.image_url = "chocolatemilk"
+  m.image_url = "meal/chocolatemilk.png"
 end
 
 Meal.find_or_create_by(name: "donut") do |m|
   m.qualification = "bad"
   m.points = 0
-  m.image_url = "donut"
+  m.image_url = "meal/donut.png"
 end
 
 Meal.find_or_create_by(name: "soda can") do |m|
   m.qualification = "bad"
   m.points = 0
-  m.image_url = "sodacan"
+  m.image_url = "meal/sodacan.png"
 end
 
 Meal.find_or_create_by(name: "banana") do |m|
   m.qualification = "neutral"
   m.points = 20
-  m.image_url = "banana"
+  m.image_url = "meal/banana.png"
 end
 
 Meal.find_or_create_by(name: "bread") do |m|
   m.qualification = "neutral"
   m.points = 20
-  m.image_url = "bread"
+  m.image_url = "meal/bread.png"
 end
 
 Meal.find_or_create_by(name: "corn") do |m|
   m.qualification = "neutral"
   m.points = 20
-  m.image_url = "corn"
+  m.image_url = "meal/corn.png"
 end
 
 Meal.find_or_create_by(name: "juice") do |m|
   m.qualification = "neutral"
   m.points = 20
-  m.image_url = "juice"
+  m.image_url = "meal/juice.png"
 end
 
 Meal.find_or_create_by(name: "orange") do |m|
   m.qualification = "neutral"
   m.points = 20
-  m.image_url = "orange"
+  m.image_url = "meal/orange.png"
 end
 
 Meal.find_or_create_by(name: "peach") do |m|
   m.qualification = "neutral"
   m.points = 20
-  m.image_url = "peach"
+  m.image_url = "meal/peach.png"
 end
