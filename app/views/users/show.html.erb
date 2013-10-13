@@ -1,0 +1,10 @@
+<%= render @user %>
+
+<section class="menu">
+  <% @user.people.each do |child| %>
+    <h2><%= child.name %></h2>
+    <ul>
+      <li><%= link_to "What did #{child.name} eat today?", user_child_journal_path(@user, child) %>
+    </ul>
+  <% end %>
+</section>

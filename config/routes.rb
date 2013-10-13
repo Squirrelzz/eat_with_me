@@ -11,6 +11,11 @@ Squirrelzz::Application.routes.draw do
     get :reset
   end
   resources :feeds, only: [:create]
+  resources :users, only: [:show] do
+    resources :children, only: [] do
+      get :journal
+    end
+  end
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'

@@ -8,18 +8,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-    resource = User.new(params.require(:user).permit(:email,
-                                                 :current_password,
-                                                 :password,
-                                                 :password_confirmation,
-                                                 :remember_me,
-                                                 :first_name,
-                                                 :last_name,
-                                                 :phone_number,
-                                                 :reset_password_token,
-                                                 :time_zone,
-                                                 :people => [ :name ],
-                                                 :people_attributes => [ :name ])
+    resource = User.new(params.require(:user).permit(
+      :email,
+      :name,
+      :current_password,
+      :password,
+      :password_confirmation,
+      :remember_me,
+      :first_name,
+      :last_name,
+      :phone_number,
+      :reset_password_token,
+      :time_zone,
+      :people => [ :name ],
+      :people_attributes => [ :name ]
+    )
                    )
     resource.people.build do |p|
       p.name = params[:people][:name]
@@ -46,6 +49,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_up) { params.require(:user).permit(:email,
+                                                                            :name,
                                                                             :current_password,
                                                                             :password,
                                                                             :password_confirmation,
