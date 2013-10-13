@@ -1,8 +1,24 @@
+$background: url(/assets/geometry.png);
+$card: #43B7E9;
+$highlight: #9ACD6C;
+$infoCard: rgba(247,245,235,.75);
+$royal: #361984;
+
+@mixin background-clip($clip) {
+  -webkit-background-clip: $clip;
+     -moz-background-clip: $clip;
+          background-clip: $clip;
+}
+
+body {
+	background: $background;
+}
+fieldset {
+	border: none;
+	padding: none;
+}
 section[class*='screen'] {
   text-align: center;
-  height: 450px;
-  background: red;
-  margin-bottom: 100px;
 }
 
 .screen--main {
@@ -12,22 +28,33 @@ section[class*='screen'] {
 .screen--character {
   .character {
     min-height: 5em;
-    background: blue;
-    border-radius: 30px;
+    background: $card;
+    border-radius: 2em;
+  border: .5em double $royal;
+  @include background-clip(padding-box);
+	
     p {
       text-align: center;
     }
     &.selected {
-      background: yellow;
+      background: $highlight;
     }
 
     .information {
       display: none;
-      background: green;
+      background: $infoCard;
+	  padding: 1em;
       position: absolute;
       min-height: 5em;
       margin-top: -11em;
       z-index: 10;
+
+	  li {
+		  list-style-type: none;
+	  }
+	  label {
+		  display: none;
+	  }
     }
   }
 }

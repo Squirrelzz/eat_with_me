@@ -1,23 +1,37 @@
+body {
+  background: url(/assets/geometry.png); }
+
+fieldset {
+  border: none;
+  padding: none; }
+
 section[class*='screen'] {
-  text-align: center;
-  height: 450px;
-  background: red;
-  margin-bottom: 100px; }
+  text-align: center; }
 
 .screen--character .character {
   min-height: 5em;
-  background: blue;
-  border-radius: 30px; }
+  background: #43b7e9;
+  border-radius: 2em;
+  border: 0.5em double #361984;
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding-box;
+  background-clip: padding-box; }
   .screen--character .character p {
     text-align: center; }
   .screen--character .character.selected {
-    background: yellow; }
+    background: #9acd6c; }
   .screen--character .character .information {
-    background: green;
+    display: none;
+    background: rgba(247, 245, 235, 0.75);
+    padding: 1em;
     position: absolute;
     min-height: 5em;
     margin-top: -11em;
     z-index: 10; }
+    .screen--character .character .information li {
+      list-style-type: none; }
+    .screen--character .character .information label {
+      display: none; }
 
 .screen--feed .header {
   background: blue;
