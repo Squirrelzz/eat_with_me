@@ -1,6 +1,6 @@
 class PetsController < ApplicationController
 
-  before_filter :find_pet, only: :show
+  before_filter :find_pet, only: [:show, :reset]
 
   respond_to :html, :json
 
@@ -22,9 +22,14 @@ class PetsController < ApplicationController
     respond_with @pet
   end
 
+  def reset
+    @pet.feeds = []
+    redirect_to pet_path(@pet)
+  end
+
   private
 
   def find_pet
-    @pet = Pet.find(params[:id])
+    @pet = Pet.find(params[:id] || params[:pet_id])
   end
 end
