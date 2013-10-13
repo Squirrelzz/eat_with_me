@@ -15,11 +15,11 @@ class Feed < ActiveRecord::Base
     def happiness
       case meals_person.meal.qualification
       when "a-good"
-        "/assets/health/happy.png"
+        "/images/health/happy.png"
       when "b-neutral"
-        "/assets/health/neutral.png"
+        "/images/health/neutral.png"
       when "c-bad"
-        "/assets/health/sad.png"
+        "/images/health/sad.png"
       end
     end
 end

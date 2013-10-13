@@ -38,15 +38,15 @@ class Pet < ActiveRecord::Base
 
   def health_icon
     if health_index > 0.8
-      "/assets/scale/state-5.png"
+      "/images/scale/state-5.png"
     elsif health_index > 0.6
-      "/assets/scale/state-4.png"
+      "/images/scale/state-4.png"
     elsif health_index > 0.4
-      "/assets/scale/state-3.png"
+      "/images/scale/state-3.png"
     elsif health_index > 0.2
-      "/assets/scale/state-2.png"
+      "/images/scale/state-2.png"
     else
-      "/assets/scale/state-1.png"
+      "/images/scale/state-1.png"
     end
   end
 end
