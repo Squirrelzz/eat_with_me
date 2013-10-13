@@ -1,4 +1,4 @@
-$background: url(/assets/bg/geometry.png) #f2eedc;
+$background: #f2eedc;
 $card: url(/assets/bg/knit2.png);
 $card2: url(/assets/bg/knit3.png);
 $card3: url(/assets/bg/knit4.png);
@@ -21,8 +21,8 @@ $lilaLight: rgba(180, 172, 209, .25);
 }
 
 body {
-	background: $background;
 	font-family: 'Didact Gothic', sans-serif;
+	background: $background;
 }
 p {
 	font-size: 1.25em;
@@ -60,23 +60,13 @@ section[class*='screen'] {
     border-radius: 2em;
     border: .5em double $lightPurple;
 
-	&:nth-child(1) {
-		background: $card;
-		@include background-clip(padding-box);
-	}
   	&:nth-child(2) {
-		background: $card2;
-		@include background-clip(padding-box);
 		border-color: $lightBlue;
 	}
   	&:nth-child(3) {
-		background: $card3;
-		@include background-clip(padding-box);
 		border-color: $lightGreen;
 	}
   	&:nth-child(4) {
-		background: $card4;
-		@include background-clip(padding-box);
 		border-color: $lightRed;
 	}
     p {
@@ -84,7 +74,6 @@ section[class*='screen'] {
     }
     &.selected {
 	  border: .5em double $royal;
-	  @include background-clip(padding-box);
     }
 
 
@@ -188,8 +177,5 @@ section[class*='screen'] {
 .draggable {
 	cursor: move;
 }
-
-
-
 
 .reveal-modal > :first-child { margin: 0 !important; }
