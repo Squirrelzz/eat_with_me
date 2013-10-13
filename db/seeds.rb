@@ -15,7 +15,7 @@ Person.find_or_create_by(name: "Donny", user: user)
 Character.find_or_create_by(name: "bear", image_url: "bear")
 Character.find_or_create_by(name: "rabbit", image_url: "rabbit")
 Character.find_or_create_by(name: "cat", image_url: "cat")
-Character.find_or_create_by(name: "dog", image_url: "bear")
+Character.find_or_create_by(name: "dog", image_url: "dog")
 
 Meal.find_or_create_by(name: "apple") do |m|
   m.qualification = "a-good"

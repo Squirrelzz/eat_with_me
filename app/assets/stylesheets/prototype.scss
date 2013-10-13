@@ -43,6 +43,17 @@ section[class*='screen'] {
 
 
 }
+.logo {
+	div:nth-child(2) {
+		text-align: center;
+		img:first-child {
+			margin: 3em 0;
+		}
+	}
+	div:nth-child(3) {
+		text-align: right;
+	}
+}
 .screen--character {
   .character {
     min-height: 5em;
