@@ -19,7 +19,7 @@ class Pet < ActiveRecord::Base
       "c-bad"     => -1
     }
 
-    feeds.map(&:meals_person).map(&:meal).map(&:qualification).map{|q| values[q] }.inject(:+).to_f / feeds.count
+    (feeds.map(&:meals_person).map(&:meal).map(&:qualification).map{|q| values[q] }.inject(:+).to_f / feeds.count + 1) / 2
   end
 
   def feeling
