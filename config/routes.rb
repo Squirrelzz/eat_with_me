@@ -7,7 +7,7 @@ Squirrelzz::Application.routes.draw do
 
   resources :people, only: :show
   resources :pets, only: [:create, :show]
-  resources :feeds, only: [:create, :show]
+  resources :feeds, only: [:create]
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'

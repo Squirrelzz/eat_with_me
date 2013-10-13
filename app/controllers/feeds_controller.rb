@@ -2,8 +2,6 @@ class FeedsController < ApplicationController
 
   respond_to :html, :json
 
-  before_filter :find_feed, only: :show
-
   def create
     @feed = Feed.new(params.require(:feed).permit(:pet_id, :meal_id))
 
@@ -22,11 +20,5 @@ class FeedsController < ApplicationController
         }
       end
     end
-  end
-
-  private
-
-  def find_feed
-    @feed = Feed.find(params[:id])
   end
 end
