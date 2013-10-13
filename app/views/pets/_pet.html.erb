@@ -6,13 +6,12 @@
   <div class="small-8 columns">
     <p>
       <%= pet.name %> feels
-      <%= image_tag pet.health_icon, title: pet.feeds.count, id: "health_icon" %>
-      (<span id="health_index"><%= pet.health_index %></span>)
+      <div id="scale">
+        <%= image_tag pet.health_icon, title: pet.feeds.count, id: "health_icon" %>
+        <%= image_tag "scale/bar.png", id: "bar" %>
+        <%= image_tag "scale/tick.png", id: "tick" %>
+      </div>
     </p>
-	
-	 <%= image_tag "scale/state-1.png"%><br>
-	 <%= image_tag "scale/bar.png"%>
-	 <%= image_tag "scale/tick.png"%>
   </div>
 </div>
 
@@ -29,3 +28,15 @@
     <h2><%= pet.name %></h2>
   </div>
 </div>
+
+<script>
+  function positionTick(index) {
+    debugger;
+    left = 14 + 220 * index;
+    $("#tick").css({ left: left + "px" });
+  }
+</script>
+
+<% content_for :dom_ready do %>
+  positionTick(<%= pet.health_index %>);
+<% end %>

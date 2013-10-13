@@ -31,10 +31,10 @@ class FeedMe
 
       success: (data) =>
         $("#health_icon").attr("src", data.health_icon)
-        $("#health_index").html(data.health_index)
         $("#coins").html(data.coins)
         $("#food-name").html(data.meal_name)
         $("#myModal").foundation("reveal", "open")
+        positionTick(data.health_index)
 
       error: (xhr, status, error) ->
 
