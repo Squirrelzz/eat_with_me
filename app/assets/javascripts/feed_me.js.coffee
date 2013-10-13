@@ -16,6 +16,7 @@ class FeedMe
 
   drop: (event, ui) =>
     @deactivate(event, ui)
+    $(".tooltip").hide()
     feed =
       feed:
         meal_id: ui.draggable.data("mealId")
