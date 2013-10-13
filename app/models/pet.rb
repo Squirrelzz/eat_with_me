@@ -1,5 +1,5 @@
 class Pet < ActiveRecord::Base
-  has_many :feeds
+  has_many :feeds, dependent: :destroy
   belongs_to :character
   belongs_to :person
 

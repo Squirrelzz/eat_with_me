@@ -6,8 +6,10 @@ Squirrelzz::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :people, only: :show
-  resources :pets, only: [:create, :show]
-  resources :feeds, only: [:create, :show]
+  resources :pets, only: [:create, :show] do
+    get :reset
+  end
+  resources :feeds, only: [:create]
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'

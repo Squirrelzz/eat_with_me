@@ -14,6 +14,9 @@
 //= require jquery_ujs
 //= require jquery.ui.draggable
 //= require jquery.ui.droppable
+//= require jquery.ui.mouse
+//= require jquery.ui.touch-punch
+//= require jquery.ui.widget
 //= require foundation
 //= require turbolinks
 //= require_tree .

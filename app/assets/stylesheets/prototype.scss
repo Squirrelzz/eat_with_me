@@ -1,4 +1,4 @@
-$background: url(/assets/geometry.png);
+$background: url(/assets/geometry.png) #f2eedc;
 $card: url(/assets/knit2.png);
 $highlight: #9ACD6C;
 $transLight: rgba(247,245,235,.75);
@@ -35,12 +35,12 @@ section[class*='screen'] {
     border-radius: 2em;
     border: .5em double $light;
   @include background-clip(padding-box);
-	
+
     p {
       text-align: center;
     }
     &.selected {
-      
+
 	  border: .5em double $royal;
 	  @include background-clip(padding-box);
     }
@@ -90,6 +90,11 @@ section[class*='screen'] {
 		text-align: center;
 	}
 }
+<<<<<<< HEAD
 .draggable {
 	cursor: move;
 }
+=======
+
+.reveal-modal > :first-child { margin: 0 !important; }
+>>>>>>> f7d7b8601195686963e452d786b887bb163efc20
