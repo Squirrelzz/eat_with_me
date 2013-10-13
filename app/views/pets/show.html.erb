@@ -19,11 +19,11 @@
   </div>
 </section>
 
-<div id="myModal" class="reveal-modal large text-center">
+<div id="justFed" class="reveal-modal large text-center">
   <h2>You just ate <span id='food-name'>FOOD_NAME</span></h2>
-  <p>FOOD_NAME is [[healthy]]</p>
-  <p>[[+ x Coins]]</p>
-  <p>[[Pet]] is feeling [[flavortext]]</p>
+  <p><span id="food-name-1">FOOD_NAME</span> is <span id="food-healthy">[[healthy]]</span></p>
+  <p>+ <span id="food-value">x</span> Coins</p>
+  <p><%= @pet.name %> is feeling <span id="feeling">xxx</span></p>
   <a class="close-reveal-modal">&#215;</a>
 </div>
 

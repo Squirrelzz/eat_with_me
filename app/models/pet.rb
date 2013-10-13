@@ -20,6 +20,20 @@ class Pet < ActiveRecord::Base
     feeds.map(&:meal).map(&:qualification).map{|q| values[q] }.inject(:+).to_f / feeds.count
   end
 
+  def feeling
+    if health_index > 0.8
+      "great!"
+    elsif health_index > 0.6
+      "good."
+    elsif health_index > 0.4
+      "ok."
+    elsif health_index > 0.2
+      "upset."
+    else
+      "very sad."
+    end
+  end
+
   def health_icon
     if health_index > 0.8
       "/assets/scale/state-5.png"

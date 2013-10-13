@@ -33,8 +33,12 @@ class FeedMe
       success: (data) =>
         $("#health_icon").attr("src", data.health_icon)
         $("#coins").html(data.coins)
+        $("#justFed").foundation("reveal", "open")
         $("#food-name").html(data.meal_name)
-        $("#myModal").foundation("reveal", "open")
+        $("#food-name-1").html(data.meal_name)
+        $("#food-healthy").html(data.how_healthy)
+        $("#food-value").html(data.value)
+        $("#feeling").html(data.feeling)
         positionTick(data.health_index)
 
       error: (xhr, status, error) ->
