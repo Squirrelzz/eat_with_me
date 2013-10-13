@@ -12,6 +12,7 @@ test:
 
 production:
   adapter: postgresql
-  database: feast20013_production
+  database: feast20013
   pool: 5
   timeout: 5000
+  user: root
