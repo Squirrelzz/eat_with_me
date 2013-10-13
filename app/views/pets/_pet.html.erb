@@ -1,21 +1,21 @@
 <div class="row feed-header">
   <div class="small-4 columns coins">
-    $ <%= pet.coins %>
+    $ <span id="coins"><%= pet.coins %></span>
   </div>
 
   <div class="small-8 columns">
-	  <p>
-	 <%= pet.name %> feels
-    <%= image_tag pet.health_icon, title: pet.feeds.count %>
-    <span>(<%= pet.health_index %>)</span>
-	</p>
+    <p>
+      <%= pet.name %> feels
+      <%= image_tag pet.health_icon, title: pet.feeds.count, id: "health_icon" %>
+      <span>(<span id="health_index"><%= pet.health_index %></span>)</span>
+    </p>
   </div>
 </div>
 
 
 <div class="row">
   <div class="small-12 columns">
-    <%= image_tag "#{pet.image_url}.png" %>
+    <%= image_tag "#{pet.image_url}.png", class: "droppable" %>
     <h2><%= pet.name %></h2>
   </div>
 </div>

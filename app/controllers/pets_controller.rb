@@ -2,7 +2,7 @@ class PetsController < ApplicationController
 
   before_filter :find_pet, only: :show
 
-  respond_to :html
+  respond_to :html, :json
 
   def create
     pet_attributes = params[:pet]
