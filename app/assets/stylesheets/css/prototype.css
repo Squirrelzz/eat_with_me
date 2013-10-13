@@ -1,20 +1,29 @@
-div[class*='character'] {
-  background: green;
-  min-height: 5em;
-  border: .5em solid black; }
-  div[class*='character'] img {
-    border-radius: 40px; }
-  div[class*='character'] p {
-    text-align: center; }
-
 section[class*='screen'] {
+  text-align: center;
   height: 450px;
   background: red;
   margin-bottom: 100px; }
 
+.screen--character .character {
+  min-height: 5em;
+  background: blue;
+  border-radius: 30px; }
+  .screen--character .character p {
+    text-align: center; }
+  .screen--character .character.selected {
+    background: yellow; }
+  .screen--character .character .information {
+    background: green;
+    position: absolute;
+    min-height: 5em;
+    margin-top: -11em;
+    z-index: 10; }
+
 .screen--feed .header {
-  background: black;
+  background: blue;
   padding: 1em; }
+  .screen--feed .header .coins {
+    text-align: left; }
 
 .icon--character {
   width: 75%;
