@@ -1,6 +1,8 @@
 <div class="row feed-header">
   <div class="large-2 columns coins">
-    <%= image_tag "money.png" %> <br> <span id="coins"><%= pet.coins %></span>
+    <%= image_tag "money.png" %>
+    <br>
+    <span id="coins"><%= pet.coins || 0 %></span>
   </div>
 
   <div class="large-8 columns">
@@ -10,7 +12,7 @@
         <%= content_tag :span, "", id: "tick" %>
       </div>
   </div>
-  
+
   <div class="large-2 columns">
   </div>
 </div>
