@@ -13,15 +13,15 @@
         <div class="information">
           <%= image_tag "#{character.name}-ns.png" %>
 
-		  <%= form_for Pet.new do |f| %>
-			<%= f.text_field :name, placeholder: "Name your pet!" %>
-			<label class="gender"><%= f.radio_button :sex, "Boy" %> Boy</label>
-		  	<label class="gender"><%= f.radio_button :sex, "Girl" %> Girl</label>
-			<%= f.hidden_field :character_id, value: character.id %>
-			<%= f.hidden_field :person_id, value: @person.id %>
+          <%= form_for Pet.new do |f| %>
+            <%= f.text_field :name, placeholder: "Name your pet!" %>
+            <label class="gender"><%= f.radio_button :sex, "Boy" %> Boy</label>
+            <label class="gender"><%= f.radio_button :sex, "Girl" %> Girl</label>
+            <%= f.hidden_field :character_id, value: character.id %>
+            <%= f.hidden_field :person_id, value: @person.id %>
 
-			<%= f.submit "Save", class: "button round success" %>
-		  <% end %>
+            <%= f.submit "Save", class: "button round success" %>
+          <% end %>
         </div>
       </div>
     <% end %>
