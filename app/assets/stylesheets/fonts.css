@@ -1,13 +1,4 @@
 @font-face {
-  font-family: 'Didact Gothic';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Didact Gothic'),
-    local('DidactGothic'),
-    url('/assets/DidactGoth.woff') format('woff');
-}
-
-@font-face {
 	font-family: 'ewm';
 	src:url('fonts/ewm.eot');
 	src:url('fonts/ewm.eot?#iefix') format('embedded-opentype'),
