@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
+ruby "2.0.0"
 
 gem 'rails', '4.0.0'
 gem 'thin'
-gem 'mysql2'
 gem 'pg'
 gem 'zurb-foundation', '~> 4.0.0'
 gem 'sass-rails', '~> 4.0.0'
@@ -38,6 +38,10 @@ gem 'responders',          github: 'plataformatec/responders'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
+
+group :production do
+  gem 'rails_12factor'
+end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
