@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131013143401) do
+ActiveRecord::Schema.define(version: 20131015032658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,9 @@ ActiveRecord::Schema.define(version: 20131013143401) do
     t.datetime "updated_at"
   end
 
+  add_index "feeds", ["meals_person_id"], name: "index_feeds_on_meals_person_id", using: :btree
+  add_index "feeds", ["pet_id"], name: "index_feeds_on_pet_id", using: :btree
+
   create_table "meals", force: true do |t|
     t.string  "name"
     t.string  "qualification"
@@ -58,6 +61,9 @@ ActiveRecord::Schema.define(version: 20131013143401) do
     t.integer "person_id"
   end
 
+  add_index "meals_people", ["meal_id"], name: "index_meals_people_on_meal_id", using: :btree
+  add_index "meals_people", ["person_id"], name: "index_meals_people_on_person_id", using: :btree
+
   create_table "people", force: true do |t|
     t.string   "name"
     t.integer  "user_id"
@@ -65,12 +71,17 @@ ActiveRecord::Schema.define(version: 20131013143401) do
     t.datetime "updated_at"
   end
 
+  add_index "people", ["user_id"], name: "index_people_on_user_id", using: :btree
+
   create_table "pets", force: true do |t|
     t.string  "name",         null: false
     t.string  "sex",          null: false
     t.integer "character_id", null: false
     t.integer "person_id",    null: false
   end
+
+  add_index "pets", ["character_id"], name: "index_pets_on_character_id", using: :btree
+  add_index "pets", ["person_id"], name: "index_pets_on_person_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
