@@ -4,7 +4,7 @@
 
 <div class="row">
   <div id="journal">
-    <% Meal.sorted.all.each do |meal| %>
+    <% Meal.order(:qualification, :name).all.each do |meal| %>
       <%= content_tag :div, class: "small-3 large-2 columns meal", data: { meal_id: meal.id, person_id: @child.id } do %>
         <%= image_tag meal.image_url %>
         <%= content_tag :span, meal.name.titleize %>
