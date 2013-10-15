@@ -4,7 +4,7 @@
   <h2>Take your pet home</h2>
 
   <div class="row">
-    <% Character.all.each do |character| %>
+    <% Character.sorted.all.each do |character| %>
       <div class="small-6 large-3 columns character <%= character.name %>">
         <%= image_tag "#{character.name}-ns.png"%>
         <p><%= character.name %></p>
@@ -19,7 +19,7 @@
 		  	<label class="gender"><%= f.radio_button :sex, "Girl" %> Girl</label>
 			<%= f.hidden_field :character_id, value: character.id %>
 			<%= f.hidden_field :person_id, value: @person.id %>
-			
+
 			<%= f.submit "Save", class: "button round success" %>
 		  <% end %>
         </div>
