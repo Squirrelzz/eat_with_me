@@ -1,8 +1,35 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable,
+    :validatable
 
-  has_many :people, dependent: :destroy
-  accepts_nested_attributes_for :people
+  belongs_to :parent, class_name: 'User', inverse_of: :children
+
+  has_many :children,
+    class_name: 'User',
+    dependent: :destroy,
+    foreign_key: :parent_id,
+    inverse_of: :parent
+
+  has_many :pets
+
+  has_many :children_items
+  has_many :items, through: :children_items
+
+  def is_parent?
+    children.any?
+  end
+
+  def is_child?
+    !is_parent?
+  end
+
+  def has_pet?
+    pets.any?
+  end
+
+  def pet
+    pets.first
+  end
 end

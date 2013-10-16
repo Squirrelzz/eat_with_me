@@ -2,14 +2,13 @@ class WelcomeController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @person = current_user.people.first
-
-    if @person.present?
-      if @person.pets.any?
-        redirect_to pet_path(@person.pets.first)
-      else
-        redirect_to person_path(@person)
-      end
+    @user = current_user
+    if @user.is_parent?
+      redirect_to parent_path(@user)
+    elsif @user.is_child?
+      redirect_to child_path(@user)
+    else
+      raise "WTF?"
     end
   end
 end

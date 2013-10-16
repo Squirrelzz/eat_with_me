@@ -1,15 +1,15 @@
-<%= render @user %>
+<h1>Hello, <%= @parent.name %></h1>
 
 <h2>What did <%= @child.name %> eat today?</h2>
 
 <div class="row">
   <div id="journal">
-    <% Meal.includes(:meals_people).each do |meal| %>
-      <%= content_tag :div, class: "small-3 large-2 columns meal", data: { meal_id: meal.id, person_id: @child.id } do %>
-        <%= image_tag meal.image_url %>
-        <%= content_tag :span, meal.name.titleize %>
-        <%= content_tag :span, id: "meal_#{meal.id}_person_#{@child.id}" do %>
-          <% if @child.meals_people.find_by_meal_id(meal.id).present? %>
+    <% Item.includes(:children_items).each do |item| %>
+      <%= content_tag :div, class: "small-3 large-2 columns item", data: { item_id: item.id, user_id: @child.id } do %>
+        <%= image_tag item.image_url %>
+        <%= content_tag :span, item.name.titleize %>
+        <%= content_tag :span, id: "item_#{item.id}_child_#{@child.id}" do %>
+          <% if @child.children_items.find_by_item_id(item.id).present? %>
             [OK]
           <% end %>
         <% end %>
@@ -25,5 +25,5 @@
 </div>
 
 <% content_for :dom_ready do %>
-  new MealPerson($(".meal"));
+  new ChildItem($(".item"));
 <% end %>

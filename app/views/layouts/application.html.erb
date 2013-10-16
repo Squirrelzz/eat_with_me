@@ -18,19 +18,7 @@
 
   <body>
     <div class="row">
-      <div class="large-12 columns">
-        <div id="menu">
-          <% if user_signed_in? %>
-            <%= link_to "Child's home", root_path %> |
-            <%= link_to "Dashboard", user_path(current_user) %> |
-            <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-          <% else %>
-            <% unless devise_controller? %>
-              <%= link_to "Login", new_user_session_path %>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
+      <%= render "layouts/menu" %>
     </div>
 
     <div class="row">

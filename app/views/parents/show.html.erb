@@ -1,0 +1,10 @@
+<h1>Hello, <%= @parent.name %></h1>
+
+<section class="menu">
+  <% @parent.children.each do |child| %>
+    <h2><%= child.name %></h2>
+    <ul>
+      <li><%= link_to "What did #{child.name} eat today?", parent_child_journal_path(@parent, child) %>
+    </ul>
+  <% end %>
+</section>

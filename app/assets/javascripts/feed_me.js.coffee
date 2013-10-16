@@ -20,18 +20,19 @@ class FeedMe
 
     @deactivate(event, ui)
     $(".tooltip").hide()
-    feed =
-      feed:
-        meals_person_id: ui.draggable.data("mealsPersonId")
+
+    items_pet =
+      items_pet:
+        children_item_id: ui.draggable.data("childrenItemId")
         pet_id: ui.draggable.data("petId")
 
     ui.draggable.remove()
 
     $.ajax
-      url: '/feeds'
+      url: '/items_pets'
       type: 'post'
       dataType: 'json'
-      data: feed
+      data: items_pet
 
       success: (data) =>
         $("#health_icon").attr("src", data.health_icon)

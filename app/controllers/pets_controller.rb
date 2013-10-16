@@ -1,20 +1,13 @@
 class PetsController < ApplicationController
-
   before_filter :find_pet, only: [:show, :reset]
 
   respond_to :html, :json
 
   def create
-    pet_attributes = params[:pet]
-    pet = Pet.new do |p|
-      p.name = pet_attributes[:name]
-      p.sex = pet_attributes[:sex]
-      p.character_id = pet_attributes[:character_id]
-      p.person_id = pet_attributes[:person_id]
-    end
+    @pet = Pet.new(pet_params)
 
-    if pet.save
-      redirect_to pet_path(pet)
+    if @pet.save
+      redirect_to pet_path(@pet)
     end
   end
 
@@ -23,7 +16,7 @@ class PetsController < ApplicationController
   end
 
   def reset
-    @pet.feeds = []
+    @pet.items_pets = []
     redirect_to pet_path(@pet)
   end
 
@@ -31,5 +24,9 @@ class PetsController < ApplicationController
 
   def find_pet
     @pet = Pet.find(params[:id] || params[:pet_id])
+  end
+
+  def pet_params
+    params.require(:pet).permit(:name, :sex, :character_id, :user_id)
   end
 end

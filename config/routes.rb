@@ -1,6 +1,4 @@
 Squirrelzz::Application.routes.draw do
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
   devise_for :users, controllers: { registrations: "users/registrations" }
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -10,13 +8,15 @@ Squirrelzz::Application.routes.draw do
   resources :pets, only: [:create, :show] do
     get :reset
   end
-  resources :feeds, only: [:create]
-  resources :users, only: [:show] do
+  resources :children_items, only: [:create]
+  resources :items_pets, only: [:create]
+
+  resources :children, only: [:show]
+  resources :parents, only: [:show] do
     resources :children, only: [] do
       get :journal
     end
   end
-  resources :meals_people, only: [:create]
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'

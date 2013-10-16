@@ -1,17 +1,25 @@
 class Pet < ActiveRecord::Base
-  has_many :feeds, dependent: :destroy
-  belongs_to :character
-  belongs_to :person
 
-  delegate :name, to: :person, prefix: true
+  has_many :items_pets, dependent: :destroy
+  has_many :children_items, through: :items_pets
+  has_many :items, through: :children_items
+
+  belongs_to :character
+  belongs_to :child, class_name: "User", foreign_key: :user_id
+
+  delegate :name, to: :child, prefix: true
   delegate :image_url, to: :character
 
   def coins
-    feeds.map(&:meals_person).map(&:meal).map(&:points).inject(:+)
+    points.inject(:+)
+  end
+
+  def points
+    @points ||= items.map(&:points)
   end
 
   def health_index
-    return 0.5 if feeds.count == 0
+    return 0.5 if items.empty?
 
     values = {
       "a-good"    =>  1,
@@ -19,20 +27,20 @@ class Pet < ActiveRecord::Base
       "c-bad"     => -1
     }
 
-    (feeds.map(&:meals_person).map(&:meal).map(&:qualification).map{|q| values[q] }.inject(:+).to_f / feeds.count + 1) / 2
+    (items.map(&:qualification).map{|q| values[q] }.inject(:+).to_f / items.count + 1) / 2
   end
 
   def feeling
     if health_index > 0.8
       "great!"
     elsif health_index > 0.6
-      "good."
+      "good"
     elsif health_index > 0.4
-      "ok."
+      "ok"
     elsif health_index > 0.2
-      "upset."
+      "upset"
     else
-      "very sad."
+      "very sad"
     end
   end
 
