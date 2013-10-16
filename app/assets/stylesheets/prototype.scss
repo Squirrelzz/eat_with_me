@@ -1,18 +1,19 @@
-$background: #f2eedc;
-$card: url(/assets/bg/knit2.png);
-$card2: url(/assets/bg/knit3.png);
-$card3: url(/assets/bg/knit4.png);
-$card4: url(/assets/bg/knit5.png);
+
 $highlight: #9ACD6C;
 $transLight: rgba(247,245,235,.85);
-$beige: #F7F5EB;
 $royal: #361984;
-$lightPurple: #B4ACD1;
+
+
+$beigeLighter: #F7F5EB;
+$beige: #f2eedc;
+$beigeDarker: #ded9c1;
+
 $lightBlue: #A1D1E2;
 $lightGreen: #B2CC96;
-$lightRed: #E2ACA1;
-$coral: #ED9685;
-$lilaLight: rgba(180, 172, 209, .25);
+
+
+$background: $beige;
+$border: $beigeDarker;
 
 @mixin background-clip($clip) {
   -webkit-background-clip: $clip;
@@ -57,18 +58,7 @@ section[class*='screen'] {
 .screen--character {
   .character {
     min-height: 5em;
-    border-radius: 2em;
-    border: .5em double $lightPurple;
-
-  	&:nth-child(2) {
-		border-color: $lightBlue;
-	}
-  	&:nth-child(3) {
-		border-color: $lightGreen;
-	}
-  	&:nth-child(4) {
-		border-color: $lightRed;
-	}
+    border: .1em solid $border;
     p {
       text-align: center;
     }
@@ -80,7 +70,6 @@ section[class*='screen'] {
     .information {
       display: none;
       background: $beige;
-      border-radius: 1.75em;
 	  padding: 1em;
       position: absolute;
       min-height: 5em;
