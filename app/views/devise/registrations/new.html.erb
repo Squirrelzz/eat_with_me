@@ -15,10 +15,14 @@
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
 
-  <%= fields_for :people do |p| %>
+  <%= fields_for :children do |p| %>
+    <h3>Child login details</h3>
+    <div><%= p.label :name %><br /><%= p.text_field :name %></div>
+    <div><%= p.label :email %><br /><%= p.email_field :email %></div>
+    <div><%= p.label :password %><br /><%= p.password_field :password %></div>
     <div>
-      <%= p.label :name, "Child's Name" %><br />
-      <%= p.text_field :name %>
+      <%= p.label :password_confirmation %><br />
+      <%= p.password_field :password_confirmation %>
     </div>
   <% end %>
 

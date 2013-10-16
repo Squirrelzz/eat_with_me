@@ -3,29 +3,33 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def new
     build_resource({})
-    self.resource.people.build
+    self.resource.children.build
     respond_with self.resource
   end
 
   def create
-    resource = User.new(params.require(:user).permit(
-      :email,
-      :name,
-      :current_password,
-      :password,
-      :password_confirmation,
-      :remember_me,
-      :first_name,
-      :last_name,
-      :phone_number,
-      :reset_password_token,
-      :time_zone,
-      :people => [ :name ],
-      :people_attributes => [ :name ]
+    resource = User.new(
+      params.require(:user).permit(
+        :email,
+        :name,
+        :current_password,
+        :password,
+        :password_confirmation,
+        :remember_me,
+        :first_name,
+        :last_name,
+        :phone_number,
+        :reset_password_token,
+        :time_zone,
+        :children => [ :name, :email, :password ],
+        :children_attributes => [ :name, :email, :password ]
+      )
     )
-                   )
-    resource.people.build do |p|
-      p.name = params[:people][:name]
+
+    resource.children.build do |p|
+      p.name = params[:children][:name]
+      p.email = params[:children][:email]
+      p.password = params[:children][:password]
     end
     resource.save
 
@@ -48,17 +52,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { params.require(:user).permit(:email,
-                                                                            :name,
-                                                                            :current_password,
-                                                                            :password,
-                                                                            :password_confirmation,
-                                                                            :remember_me,
-                                                                            :first_name,
-                                                                            :last_name,
-                                                                            :phone_number,
-                                                                            :reset_password_token,
-                                                                            :time_zone,
-                                                                            :people_attributes => [ :name ]) }
+    devise_parameter_sanitizer.for(:sign_up) {
+      params.require(:user).permit(
+        :email,
+        :name,
+        :current_password,
+        :password,
+        :password_confirmation,
+        :remember_me,
+        :first_name,
+        :last_name,
+        :phone_number,
+        :reset_password_token,
+        :time_zone,
+        :children_attributes => [ :name, :email, :password ]
+      )
+    }
   end
 end
