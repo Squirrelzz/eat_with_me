@@ -11,6 +11,8 @@
 				chars.about();
 			})
 			
+
+			
 			$(".information").hide();
 		},
 

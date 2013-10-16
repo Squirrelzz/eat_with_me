@@ -6,7 +6,9 @@ $royal: #361984;
 
 $beigeLighter: #F7F5EB;
 $beige: #f2eedc;
-$beigeDarker: #ded9c1;
+$beigeDarker: #DDDAD3;
+
+$greyLight: #F4F4F4;
 
 $lightBlue: #A1D1E2;
 $lightGreen: #B2CC96;
@@ -39,10 +41,25 @@ fieldset {
 section[class*='screen'] {
   text-align: center;
 }
+.top-menu {
+	div p {
+		padding: .05em;
+	}
+	.user {
+		text-align: left;
+	}
+
+}
+
+
+.selected {
+	border: 5px solid $lightGreen;
+	border-radius: 2000px;
+}
+
+
 
 .screen--main {
-
-
 }
 .logo {
 	div:nth-child(2) {
@@ -55,6 +72,10 @@ section[class*='screen'] {
 		text-align: right;
 	}
 }
+
+
+
+
 .screen--character {
   .character {
     min-height: 5em;
@@ -63,13 +84,13 @@ section[class*='screen'] {
       text-align: center;
     }
     &.selected {
-	  border: .5em double $royal;
+	  border: .1em solid $border;
     }
 
 
     .information {
       display: none;
-      background: $beige;
+      background: white;
 	  padding: 1em;
       position: absolute;
       min-height: 5em;
@@ -85,15 +106,20 @@ section[class*='screen'] {
 	  	  display: none;
 	  }
 	  img {
-		  width: 50%;
+		  width: 60%;
 	  }
 	  #pet_name {
 		  font-size: 1.25em;
 		  border-radius: 20px;
+		  background-color: $greyLight;
 	  }
 	  .gender {
 		  display: inline-block;
 		  font-size: 1.25em;
+		  padding: 0 .1em .1em;
+	  }
+	  .gender + .gender {
+		  padding-left: 2em;
 	  }
 	  .button {
 		  display: block;

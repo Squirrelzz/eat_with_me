@@ -5,14 +5,12 @@
 <div class="row">
   <div id="journal">
     <% Item.includes(:children_items).each do |item| %>
-      <%= content_tag :div, class: "small-3 large-2 columns item", data: { item_id: item.id, user_id: @child.id } do %>
+      <%= content_tag :div, 
+	  	  class: "small-3 large-2 columns item #{"selected" if @child.children_items.find_by_item_id(item.id).present?}", 
+	      data: { item_id: item.id, user_id: @child.id } do %>
         <%= image_tag item.image_url %>
         <%= content_tag :span, item.name.titleize %>
-        <%= content_tag :span, id: "item_#{item.id}_child_#{@child.id}" do %>
-          <% if @child.children_items.find_by_item_id(item.id).present? %>
-            [OK]
-          <% end %>
-        <% end %>
+        <%= content_tag :span, nil, id: "item_#{item.id}_child_#{@child.id}" %>
       <% end %>
     <% end %>
     <div class="columns"></div>

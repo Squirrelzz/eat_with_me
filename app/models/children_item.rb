@@ -8,7 +8,8 @@ class ChildrenItem < ActiveRecord::Base
     :name,
     :points,
     to: :item,
-    prefix: true
+    prefix: true, 
+    allow_nil: true
 
   default_scope { includes(:item) }
 end

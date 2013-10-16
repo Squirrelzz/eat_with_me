@@ -1,16 +1,14 @@
 <section class="screen--character">
-  <p>Welcome, <%= @child.name %>!</p>
-
   <h2>Take your pet home</h2>
 
   <div class="row">
     <% Character.all.each do |character| %>
       <div class="small-6 large-3 columns character <%= character.name %>">
-        <%= image_tag "#{character.name}-ns.png"%>
+        <%= image_tag "#{character.name}.png"%>
         <p><%= character.name %></p>
 
         <div class="information">
-          <%= image_tag "#{character.name}-ns.png" %>
+          <%= image_tag "#{character.name}.png" %>
 
           <%= form_for Pet.new do |f| %>
             <%= f.text_field :name, placeholder: "Name your pet!" %>
@@ -19,7 +17,7 @@
             <%= f.hidden_field :character_id, value: character.id %>
             <%= f.hidden_field :user_id, value: @child.id %>
 
-            <%= f.submit "Save", class: "button round success" %>
+            <%= f.submit "Adopt", class: "button round success" %>
           <% end %>
         </div>
       </div>
