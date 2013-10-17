@@ -5,7 +5,8 @@ class ChildItem
       $element.on('click', @createChildItem)
 
   createChildItem: (event) =>
-    item = $(event.target).parent('.item')
+    item = $(event.target)
+    item = $(event.target).parent('.item') unless item.hasClass("item")
 
     $.ajax
       url: '/children_items'

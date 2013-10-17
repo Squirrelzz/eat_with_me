@@ -13,6 +13,7 @@ class ChildrenItem < ActiveRecord::Base
   default_scope { includes(:item) }
 
   def item_name
-    item.name.titleize
+    return "" unless item.present?
+    item.try(:name).titleize
   end
 end
