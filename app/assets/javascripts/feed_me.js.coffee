@@ -37,14 +37,14 @@ class FeedMe
       success: (data) =>
         $("#health_icon").attr("src", data.health_icon)
         $("#coins").html(data.coins)
-        $("#justFed").foundation("reveal", "open")
-        $("#food-name").html(data.meal_name)
-        $("#food-name-1").html(data.meal_name)
+        $("#food-name").html(data.item_name)
+        $("#food-name-1").html(data.item_name)
         $("#food-healthy").html(data.how_healthy)
         $("#food-value").html(data.value)
         $("#feeling").html(data.feeling)
         $("#happiness").attr('src', data.happiness)
         $("#pet-image").attr('src', "/images/#{data.pet_image}")
+        $("#justFed").foundation("reveal", "open")
         positionTick(data.health_index)
 
       error: (xhr, status, error) ->
