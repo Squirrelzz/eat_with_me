@@ -10,6 +10,7 @@ class ChildrenItemsController < ApplicationController
           render json: {
             item_id: @children_item.item_id,
             user_id: @children_item.user_id,
+            qualification: @children_item.item.qualification,
             item_name: @children_item.item_name.titleize
           }.to_json
         end

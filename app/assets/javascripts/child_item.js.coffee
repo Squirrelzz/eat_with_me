@@ -21,6 +21,9 @@ class ChildItem
         id = "#item_#{data.item_id}_child_#{data.user_id}"
         $ele = $(id)
         $ele.parent('.item').addClass("selected")
-        $("#log").append($("<span/>").addClass("tag").text(data.item_name))
+
+        span = $("<span/>").addClass("tag").text(data.item_name + " ")
+        circle = $("<span/>").addClass("circle").addClass(data.qualification)
+        $("#log").append(span.append(circle))
 
 window.ChildItem = ChildItem

@@ -1,5 +1,7 @@
 @import "definitions"
 
+$circle-size: 12px
+
 #journal
   div.item
     cursor: pointer
@@ -12,3 +14,21 @@
     margin-right: 6px
     display: inline-block
     margin-top: 8px
+    border: 1px solid $beigeDarker
+
+    .circle
+      border: none
+      border-radius: $circle-size
+      width: $circle-size
+      height: $circle-size
+      background-color: black
+      display: inline-block
+
+      &.a-good
+        background-color: $goodColor
+
+      &.b-neutral
+        background-color: $neutralColor
+
+      &.c-bad
+        background-color: $badColor

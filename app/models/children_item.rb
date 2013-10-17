@@ -4,13 +4,15 @@ class ChildrenItem < ActiveRecord::Base
 
   has_many :items_pet, dependent: :destroy
 
+  attr_accessor :count
+
   delegate \
     :points,
     to: :item,
     prefix: true,
     allow_nil: true
 
-  default_scope { includes(:item) }
+  default_scope { includes(:item).order("items.qualification, items.name") }
 
   def item_name
     return "" unless item.present?

@@ -32,4 +32,13 @@ class User < ActiveRecord::Base
   def pet
     pets.first
   end
+
+  def grouped_children_items
+    {}.tap do |items|
+      children_items.each do |children_item|
+        items[children_item.item] ||= 0
+        items[children_item.item] += 1
+      end
+    end
+  end
 end

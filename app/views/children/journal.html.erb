@@ -24,8 +24,14 @@
 
 <div class="row columns large-12">
   <%= content_tag :div, id: "log" do %>
-    <% @child.children_items.each do |children_item| %>
-      <%= content_tag :span, children_item.item_name.titleize, class: "tag" %>
+    <% @child.grouped_children_items.each do |item, count| %>
+      <%= content_tag :span, class: "tag" do %>
+        <%= sprintf("%s x %i", item.name.titleize, count) %>
+        <%= content_tag :span,
+              nil,
+              class: ["circle", item.qualification]
+        %>
+      <% end %>
     <% end %>
   <% end %>
 </div>
