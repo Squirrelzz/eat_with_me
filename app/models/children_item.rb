@@ -5,11 +5,14 @@ class ChildrenItem < ActiveRecord::Base
   has_many :items_pet, dependent: :destroy
 
   delegate \
-    :name,
     :points,
     to: :item,
-    prefix: true, 
+    prefix: true,
     allow_nil: true
 
   default_scope { includes(:item) }
+
+  def item_name
+    item.name.titleize
+  end
 end

@@ -23,7 +23,6 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'activeadmin',         github: 'gregbell/active_admin'
 gem 'devise',              github: 'plataformatec/devise'
 gem 'formtastic',          github: 'justinfrench/formtastic'
 gem 'inherited_resources', github: 'josevalim/inherited_resources'

@@ -6,6 +6,7 @@ class ChildItem
 
   createChildItem: (event) =>
     item = $(event.target).parent('.item')
+
     $.ajax
       url: '/children_items'
       type: 'post'
@@ -19,6 +20,6 @@ class ChildItem
         id = "#item_#{data.item_id}_child_#{data.user_id}"
         $ele = $(id)
         $ele.parent('.item').addClass("selected")
-        $("#log").append($("<li></li>").text(data.item_name))
+        $("#log").append($("<span/>").addClass("tag").text(data.item_name))
 
 window.ChildItem = ChildItem

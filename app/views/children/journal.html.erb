@@ -1,13 +1,18 @@
-<h1>Hello, <%= @parent.name %></h1>
+<div class="row columns large-12">
+  <h2>What did <%= @child.name %> eat today?</h2>
+</div>
 
-<h2>What did <%= @child.name %> eat today?</h2>
-
-<div class="row">
+<div class="row columns large-12">
   <div id="journal">
     <% Item.includes(:children_items).each do |item| %>
-      <%= content_tag :div, 
-	  	  class: "small-3 large-2 columns item #{"selected" if @child.children_items.find_by_item_id(item.id).present?}", 
-	      data: { item_id: item.id, user_id: @child.id } do %>
+      <%= content_tag :div, class: [
+          "small-3",
+          "large-2",
+          "columns",
+          "item",
+          @child.children_items.find_by_item_id(item.id).present? ?  "selected" : ""
+        ],
+        data: { item_id: item.id, user_id: @child.id } do %>
         <%= image_tag item.image_url %>
         <%= content_tag :span, item.name.titleize %>
         <%= content_tag :span, nil, id: "item_#{item.id}_child_#{@child.id}" %>
@@ -16,12 +21,24 @@
     <div class="columns"></div>
   </div>
 </div>
-<div class="row">
-  <div class="columns">
-    <ul id="log"></ul>
-  </div>
+
+<div class="row columns large-12">
+  <%= content_tag :div, id: "log" do %>
+    <% @child.children_items.each do |children_item| %>
+      <%= content_tag :span, children_item.item_name.titleize, class: "tag" %>
+    <% end %>childrenItems
+  <% end %>
 </div>
 
 <% content_for :dom_ready do %>
   new ChildItem($(".item"));
+  $("#childrenItems").select2({
+    placeholder: "Select the items",
+    minimumLength: 2,
+    width: 400
+  });
+  $("#childrenItems").on('change', function(el) {
+    var itemId = $(el).attr('val');
+    debugger;
+  });
 <% end %>

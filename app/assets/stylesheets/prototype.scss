@@ -1,21 +1,4 @@
-
-$highlight: #9ACD6C;
-$transLight: rgba(247,245,235,.85);
-$royal: #361984;
-
-
-$beigeLighter: #F7F5EB;
-$beige: #f2eedc;
-$beigeDarker: #DDDAD3;
-
-$greyLight: #F4F4F4;
-
-$lightBlue: #A1D1E2;
-$lightGreen: #B2CC96;
-
-
-$background: $beige;
-$border: $beigeDarker;
+@import "definitions";
 
 @mixin background-clip($clip) {
   -webkit-background-clip: $clip;
@@ -24,57 +7,62 @@ $border: $beigeDarker;
 }
 
 body {
-	font-family: 'Didact Gothic', sans-serif;
-	background: $background;
+  font-family: 'Didact Gothic', sans-serif;
+  background: $background;
 }
 p {
-	font-size: 1.25em;
+  font-size: 1.25em;
 }
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Didact Gothic', sans-serif;
-	font-weight: normal;
+  font-family: 'Didact Gothic', sans-serif;
+  font-weight: normal;
 }
 fieldset {
-	border: none;
-	padding: none !important;
+  border: none;
+  padding: none !important;
 }
 section[class*='screen'] {
   text-align: center;
 }
 .top-menu {
-	div p {
-		padding: .05em;
-	}
-	.user {
-		text-align: left;
-	}
+  div p {
+    padding: .05em;
+  }
+  .user {
+    text-align: left;
+  }
 
 }
 
+.item {
+  border: 1px solid transparent;
+  padding-top: 1em;
+  margin-top: -5px;
+  margin-bottom: 5px;
 
-.selected {
-	border: 5px solid $lightGreen;
-	border-radius: 2000px;
+  &.selected {
+    border-color: $highlightBorder;
+    background-color: $beigeLighter;
+  }
+
+  &:hover, &:focus {
+    border-color: $highlightBorder;
+  }
 }
-
-
 
 .screen--main {
 }
 .logo {
-	div:nth-child(2) {
-		text-align: center;
-		img:first-child {
-			margin: 3em 0;
-		}
-	}
-	div:nth-child(3) {
-		text-align: right;
-	}
+  div:nth-child(2) {
+    text-align: center;
+    img:first-child {
+      margin: 3em 0;
+    }
+  }
+  div:nth-child(3) {
+    text-align: right;
+  }
 }
-
-
-
 
 .screen--character {
   .character {
@@ -84,48 +72,47 @@ section[class*='screen'] {
       text-align: center;
     }
     &.selected {
-	  border: .1em solid $border;
+      border: .1em solid $border;
     }
-
 
     .information {
       display: none;
       background: white;
-	  padding: 1em;
+      padding: 1em;
       position: absolute;
       min-height: 5em;
       z-index: 10;
 
-	  li {
-		  list-style-type: none;
-	  }
-	  fieldset {
-		  padding: 0 !important;
-	  }
-	  .label, .label label {
-	  	  display: none;
-	  }
-	  img {
-		  width: 60%;
-	  }
-	  #pet_name {
-		  font-size: 1.25em;
-		  border-radius: 20px;
-		  background-color: $greyLight;
-	  }
-	  .gender {
-		  display: inline-block;
-		  font-size: 1.25em;
-		  padding: 0 .1em .1em;
-	  }
-	  .gender + .gender {
-		  padding-left: 2em;
-	  }
-	  .button {
-		  display: block;
-		  text-align: center;
-		  margin: auto;
-	  }
+      li {
+        list-style-type: none;
+      }
+      fieldset {
+        padding: 0 !important;
+      }
+      .label, .label label {
+        display: none;
+      }
+      img {
+        width: 60%;
+      }
+      #pet_name {
+        font-size: 1.25em;
+        border-radius: 20px;
+        background-color: $greyLight;
+      }
+      .gender {
+        display: inline-block;
+        font-size: 1.25em;
+        padding: 0 .1em .1em;
+      }
+      .gender + .gender {
+        padding-left: 2em;
+      }
+      .button {
+        display: block;
+        text-align: center;
+        margin: auto;
+      }
     }
   }
 }
@@ -135,19 +122,16 @@ section[class*='screen'] {
     background: $transLight;
     padding: 1em;
     div:first-child {
-      	text-align: left;
+      text-align: left;
     }
-	div:last-child {
-		text-align: center;
-	}
+    div:last-child {
+      text-align: center;
+    }
   }
-
-
-
 }
 
 #justFed {
-	margin-top: 12.5em !important;
+  margin-top: 12.5em !important;
 }
 
 .icon--character {
@@ -155,42 +139,42 @@ section[class*='screen'] {
   margin: 0 auto;
 }
 .food, #journal {
-	img {
-		min-height: 4em;
-		margin-bottom: 1.25em;
-	}
+  img {
+    min-height: 4em;
+    margin-bottom: 1.25em;
+  }
 }
 #journal {
-	div.item {
-		text-align: center;
-		height: 150px;
-		span {
-			display: block;
-		}
-	}
+  div.item {
+    text-align: center;
+    height: 150px;
+    span {
+      display: block;
+    }
+  }
 }
 .pop-health, .pop-money {
-	padding: .75em 0;
-	img {
-		position: relative;
-	}
+  padding: .75em 0;
+  img {
+    position: relative;
+  }
 }
 .pop-health {
-	border: .1em dashed $lightBlue;
-	padding-top: .25em;
-	img {
-		top: 10px;
-	}
+  border: .1em dashed $lightBlue;
+  padding-top: .25em;
+  img {
+    top: 10px;
+  }
 }
 .pop-money {
-	border: .1em dashed $lightGreen;
-	img {
-		top: 5px;
-	}
+  border: .1em dashed $lightGreen;
+  img {
+    top: 5px;
+  }
 }
 
 .draggable {
-	cursor: move;
+  cursor: move;
 }
 
 .reveal-modal > :first-child { margin: 0 !important; }
