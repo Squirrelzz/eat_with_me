@@ -67,4 +67,5 @@ group :development do
 
   gem "thin"
   gem 'yajl-ruby'
+  gem 'rspec-rails'
 end

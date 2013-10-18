@@ -1,4 +1,5 @@
 <div class="row feed-header">
+
   <div class="large-2 columns coins">
     <%= image_tag "money.png" %>
     <br>
@@ -16,15 +17,14 @@
   </div>
 </div>
 
-
 <div class="row">
   <div class="small-12 columns">
     <%=
       image_tag image_path(pet.pet_image), class: "droppable",
         id: "pet-image",
         data: {
-          open: image_path("#{pet.image_url}.png"),
-          closed: image_path(pet.pet_image)
+          open: pet.pet_eating_image,
+          closed: pet.pet_image
         }
     %>
     <h2><%= pet.name %></h2>
